@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public string currentLevel = "Level 1";
     public SpriteRenderer playerSR;
 
+    public bool isInFinal;
+
     public float flickerDuration;
 
     public float flickerTimer = 0f;
@@ -49,6 +51,15 @@ public class GameManager : MonoBehaviour
         Audio = HurtSoundObject.GetComponent<AudioSource>();
 
         flickerDuration = 2f;
+
+        if (currentLevel == "Shield Demo")
+        {
+            isInFinal = true;
+        }
+        else
+        {
+            isInFinal = false;
+        }
     }
 
     // Update is called once per frame
@@ -252,7 +263,7 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
-        if (globalManager.howFar == 7)
+        if (globalManager.howFar == 7 && isInFinal == true)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         }

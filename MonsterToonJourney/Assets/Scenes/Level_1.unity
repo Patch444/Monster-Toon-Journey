@@ -20184,6 +20184,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 1
   playerSR: {fileID: 0}
+  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
