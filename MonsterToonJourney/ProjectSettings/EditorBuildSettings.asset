@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: e25a4ee792b44b44e9e921c211f0a9e3
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 47a436ced8227bf4eab6a1ce7b6317ce
+  - enabled: 1
+    path: Assets/Scenes/LevelSelect.unity
+    guid: 38e8461914be687468436c486d4b40ae
+  - enabled: 1
+    path: Assets/Scenes/Level_1.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Level_2.unity
+    guid: 869f6b62ac17b7d4689bd8803e7cd72b
+  - enabled: 1
+    path: Assets/Scenes/Level_3.unity
+    guid: 76951d88090c810498376ce8ff875e61
+  - enabled: 1
+    path: Assets/Scenes/Level_4.unity
+    guid: 6c1dc5b5ffe123a4ba5e22e78e5d15d9
+  - enabled: 1
+    path: Assets/Scenes/Level_5.unity
+    guid: fa791daa0b4d64946b901a773203928d
+  - enabled: 1
+    path: Assets/Scenes/Demo_Shield.unity
+    guid: 53903fdab3faee240a5ab2bcf04ef001
+  - enabled: 1
+    path: Assets/Scenes/GO_L1.unity
+    guid: e913cee80afd89e44acd448b508deccf
+  - enabled: 1
+    path: Assets/Scenes/GO_L2.unity
+    guid: 45b1cc6934dd0d1449236e0824a43a59
+  - enabled: 1
+    path: Assets/Scenes/GO_L3.unity
+    guid: 347f14d999335b545af694f8c67fba2b
+  - enabled: 1
+    path: Assets/Scenes/GO_L4.unity
+    guid: bfbc27cd1f7cf5f479089dbbf221adde
+  - enabled: 1
+    path: Assets/Scenes/GO_L5.unity
+    guid: 7c30aa2ceea6e1c4794d9048652ea0ee
+  - enabled: 1
+    path: Assets/Scenes/GO_L6.unity
+    guid: c1884babe6079a246b63d830c13e0687
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 068604e00f6be0149ac98b41f4f47296
+  - enabled: 1
+    path: Assets/Scenes/Settings.unity
+    guid: 934969adeaf34d94281c7300c6d43d0f
+  m_configObjects: {}
