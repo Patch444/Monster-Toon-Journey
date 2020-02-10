@@ -377,7 +377,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.49995, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -598,7 +598,8 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   sceneName: 
-  slider: {fileID: 1948306709}
+  SFXslider: {fileID: 0}
+  MUSslider: {fileID: 0}
   mixer: {fileID: 24100000, guid: 5baace075f40f49f5b5ed0aa27434041, type: 2}
 --- !u!4 &561778214
 Transform:
@@ -646,8 +647,8 @@ RectTransform:
   m_Father: {fileID: 1409426825}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.49995, y: 0}
-  m_AnchorMax: {x: 0.49995, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2814,7 +2815,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &911977529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2846,12 +2847,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 911977528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f537384d27695914a87c70e11cd512a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 4728c36a745ae3a4b95f05e75432cb12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 911977531}
   mixer: {fileID: 24100000, guid: 5504166d718c64160ba394c26cc5e400, type: 2}
-  gm: {fileID: 0}
+  gm: {fileID: 561778213}
 --- !u!114 &911977531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,7 +2873,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0.735849, g: 0.7254361, b: 0.7254361, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2932,7 +2933,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &954754069
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3574,7 +3575,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1948306707}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f537384d27695914a87c70e11cd512a4, type: 3}
   m_Name: 

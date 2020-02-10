@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class SetVolume : MonoBehaviour
+public class SetVolumeMus : MonoBehaviour
 {
     public Slider slider;
     public AudioMixer mixer;
@@ -13,20 +13,20 @@ public class SetVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
         gm = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SetLevel(float sliderValue)
     {
-        mixer.SetFloat("SoundVol", Mathf.Log10(sliderValue) * 20);
-        PlayerPrefs.SetFloat("SFXVolume", sliderValue);
-        //gm.sfxVolume = slider.value;
+        mixer.SetFloat("MusVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+       
     }
 }

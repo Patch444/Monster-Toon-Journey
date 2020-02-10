@@ -16,7 +16,8 @@ public class GlobalManager : MonoBehaviour
     public Scene currentScene;
     public string sceneName;
 
-    public Slider slider;
+    public Slider SFXslider;
+    public Slider MUSslider;
     public AudioMixer mixer;
 
     // Start is called before the first frame update
@@ -37,13 +38,20 @@ public class GlobalManager : MonoBehaviour
 
         if (sceneName == "Settings")
         {
-            slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+            SFXslider = GameObject.Find("MUSSlider").GetComponent<Slider>();
+            SFXslider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
+
+            SFXslider = GameObject.Find("SFXSlider").GetComponent<Slider>();
+            SFXslider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
         }
     }
 
     public void SetLevel(float sliderValue)
     {
         mixer.SetFloat("SoundVol", Mathf.Log10(sliderValue) * 20);
+        PlayerPrefs.SetFloat("SFXVolume", sliderValue);
+
+        mixer.SetFloat("MusVol", Mathf.Log10(sliderValue) * 20);
         PlayerPrefs.SetFloat("MusicVolume", sliderValue);
     }
 

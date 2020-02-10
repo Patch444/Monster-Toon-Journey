@@ -23,7 +23,7 @@ public class Intro : MonoBehaviour
     void Start()
     {
         sm = GameObject.Find("SceneManager").GetComponent<SceneManager>();
-        endDistance = 46.9f;
+        endDistance = 111.0f;
         timer = 0f;
     }
 

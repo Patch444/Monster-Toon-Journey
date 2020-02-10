@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject HurtSoundObject;
 
+    public Scene currentScene;
+    public string sceneName;
+
     [SerializeField]
     Sprite fearMeter;
 
@@ -42,15 +45,22 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
         fearMeter = fearSprites[lives];
-        GameObject.Find("Fear Meter").GetComponent<Image>().sprite = fearMeter;
-        pauseMenu = GameObject.Find("PauseMenu");
-        pauseMenu.SetActive(false);
-        playerSR = GameObject.Find("Player").GetComponent<SpriteRenderer>();
-        HurtSoundObject = GameObject.Find("HurtSounds");
 
-        Audio = HurtSoundObject.GetComponent<AudioSource>();
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+        if (sceneName != "Intro")
+        {
+            GameObject.Find("Fear Meter").GetComponent<Image>().sprite = fearMeter;
+            pauseMenu = GameObject.Find("PauseMenu");
+            pauseMenu.SetActive(false);
+            playerSR = GameObject.Find("Player").GetComponent<SpriteRenderer>();
+            HurtSoundObject = GameObject.Find("HurtSounds");
 
-        flickerDuration = 2f;
+            Audio = HurtSoundObject.GetComponent<AudioSource>();
+
+            flickerDuration = 2f;
+        }
+
 
         if (currentLevel == "Shield Demo")
         {

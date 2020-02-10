@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SpikeTrap : MonoBehaviour
 {
@@ -36,16 +37,24 @@ public class SpikeTrap : MonoBehaviour
     private Vector3 spikeStart;
     private Image boxIcon;
 
+    public Scene currentScene;
+    public string sceneName;
+
 
 
 
     // Start is called before the first frame update
     void Start()
     {
+        currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        sceneName = currentScene.name;
+        if (sceneName != "Intro")
+        {
+            pm = GameObject.Find("Player").GetComponent<PlayerMove>();
+            boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
+        }
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         StartTimer();
-        pm = GameObject.Find("Player").GetComponent<PlayerMove>();
-        boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         boxLaunch = box.GetComponent<BoxLaunch>();
         spikeStart = spikes.transform.position;
         Audio = GetComponent<AudioSource>();

@@ -73,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4161521209564554718, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,7 +109,7 @@ MonoBehaviour:
   hitArrowStone: 0
   playedSound: 0
   arrowRB: {fileID: 6302195500910857784}
-  arrowSprite: {fileID: 6302195500910857786}
+  anim: {fileID: 0}
   arrowNormal: {fileID: 4161521209564554718, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
     type: 3}
   arrowBroken: {fileID: -3662863311024871256, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
