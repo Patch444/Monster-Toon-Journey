@@ -34,6 +34,7 @@ public class SpikeTrap : MonoBehaviour
     private PlayerMove pm;
     private BoxLaunch boxLaunch;
     private Vector3 spikeStart;
+    private Vector3 spikeEnd;
     private Image boxIcon;
 
 
@@ -75,42 +76,51 @@ public class SpikeTrap : MonoBehaviour
                 Audio.Play();
                 spikes.GetComponent<BoxCollider2D>().enabled = false;
             }
+
+            //starts activation timer
             if (timerRunning)
             {
                 startTimer = startTimer + Time.deltaTime;
             }
+            //Start spikes moving upward
             if (startTimer >= 3.0f && hasGoneDown)
             {
                 ActivateSpikes();
             }
+            //start timer to stop spikes
             if (movingUp)
             {
                 upTimer = upTimer + Time.deltaTime;
                 spikes.transform.Translate(Vector2.up * upSpeed);
             }
+            //stop spikes
             if (upTimer >= 0.2f && movingUp)
             {
                 movingUp = false;
                 upTimer = 0f;
                 hasGoneUp = true;
             }
+            //start timer to move down
             if (hasGoneUp)
             {
                 retractTimer = retractTimer + Time.deltaTime;
                 SoundPlayed = false;
             }
+            //start moving down
             if (retractTimer >= 1f && hasGoneUp)
             {
                 retractTimer = 0f;
                 hasGoneUp = false;
                 movingDown = true;
             }
+            //time moving down
             if (movingDown)
             {
                 PlayDownSound();
                 downTimer = downTimer + Time.deltaTime;
                 spikes.transform.Translate(Vector2.down * downSpeed);
             }
+            //finish moving down, deactivate spikes
             if (downTimer >= 0.2f && movingDown)
             {
                 DeactivateSpikes();
