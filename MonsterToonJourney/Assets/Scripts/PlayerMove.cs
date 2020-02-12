@@ -513,7 +513,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Walk()
     {
-        if(Input.GetAxis("Horizontal") > 0 && isByDoor == false)
+        if(Input.GetAxisRaw("Horizontal") > 0 && isByDoor == false)
         {
             //Move to the right
             RaycastHit2D hit = Physics2D.Raycast(transform.position, this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
@@ -551,7 +551,7 @@ public class PlayerMove : MonoBehaviour
             
 
         }
-        else if (Input.GetAxis("Horizontal") < 0 && isByDoor == false)
+        else if (Input.GetAxisRaw("Horizontal") < 0 && isByDoor == false)
         {
             //Move to the left
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
