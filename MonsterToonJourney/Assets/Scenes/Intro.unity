@@ -14908,7 +14908,8 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   sceneName: 
-  slider: {fileID: 0}
+  SFXslider: {fileID: 0}
+  MUSslider: {fileID: 0}
   mixer: {fileID: 0}
 --- !u!4 &769853949
 Transform:
@@ -25166,7 +25167,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chapman Univeristy presents...
+  m_Text: Chapman Univerisity presents...
 --- !u!222 &1822072032
 CanvasRenderer:
   m_ObjectHideFlags: 0
