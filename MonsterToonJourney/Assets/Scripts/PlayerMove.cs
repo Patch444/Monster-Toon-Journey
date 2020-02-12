@@ -150,7 +150,7 @@ public class PlayerMove : MonoBehaviour
                 int count = 0;
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].tag != "Ground")
+                    if (colliders[i].tag != "Ground" )
                     {
                         count++;
 
