@@ -26,7 +26,6 @@ public class AxeCatchPlayer : MonoBehaviour
     {
         pendulum = this.gameObject.GetComponent<PendulumSwing>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        playerCamera = GameObject.Find("Main Camera");
         target = this.transform.position - 3 * Vector3.up;
 
         //timeToMove = 0.5f;
@@ -44,8 +43,8 @@ public class AxeCatchPlayer : MonoBehaviour
 
             if (hasPlayer)
             {
-                playerCamera.transform.position = new Vector3(player.transform.position.x + cameraOffsetx, playerCamera.transform.position.y,
-                    player.transform.position.z + cameraOffsetz);
+                //playerCamera.transform.position = new Vector3(player.transform.position.x + cameraOffsetx, playerCamera.transform.position.y,
+                //    player.transform.position.z + cameraOffsetz);
 
                 //player.transform.localPosition = positionSetter.transform.localPosition;
                 //player.transform.position = this.transform.position;
@@ -55,16 +54,16 @@ public class AxeCatchPlayer : MonoBehaviour
                     //player.GetComponent<Rigidbody2D>().simulated = true;
                     if (transform.rotation.z >= 0)
                     {
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(launchForce, 1), ForceMode2D.Impulse);
+                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(launchForce, 5), ForceMode2D.Impulse);
                     }
                     else if (transform.rotation.z < 0)
                     {
-                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-launchForce, 1), ForceMode2D.Impulse);
+                        player.GetComponent<Rigidbody2D>().AddForce(new Vector2(-launchForce, 5), ForceMode2D.Impulse);
                     }
                     player.transform.SetParent(null);
                     player.transform.rotation = Quaternion.identity;
-                    playerCamera.transform.SetParent(player.transform);
-                    playerCamera.transform.localPosition = new Vector3(cameraOffsetx, cameraOffsety, cameraOffsetz);
+                    //playerCamera.transform.SetParent(player.transform);
+                    //playerCamera.transform.localPosition = new Vector3(cameraOffsetx, cameraOffsety, cameraOffsetz);
                     //player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                     player.GetComponent<Rigidbody2D>().gravityScale = 1;
                     //player.GetComponent<Rigidbody2D>().simulated = true;
@@ -84,9 +83,9 @@ public class AxeCatchPlayer : MonoBehaviour
         {
             hasPlayer = true;
             player = collision.gameObject;
-            playerCamera.transform.SetParent(null);
-            playerCamera.transform.position = new Vector3(player.transform.position.x + cameraOffsetx, 
-                player.transform.position.y + cameraOffsety, player.transform.position.z + cameraOffsetz);
+            //playerCamera.transform.SetParent(null);
+            //playerCamera.transform.position = new Vector3(player.transform.position.x + cameraOffsetx, 
+                //player.transform.position.y + cameraOffsety, player.transform.position.z + cameraOffsetz);
             //player.transform.SetParent(rotationParent.transform);
             player.transform.SetParent(positionSetter.transform);
             player.transform.localPosition = Vector3.zero;
@@ -116,7 +115,7 @@ public class AxeCatchPlayer : MonoBehaviour
             //}
             player.transform.SetParent(null);
             player.transform.rotation = Quaternion.identity;
-            playerCamera.transform.SetParent(player.transform);
+            //playerCamera.transform.SetParent(player.transform);
             player.GetComponent<Rigidbody2D>().gravityScale = 1;
             player.gameObject.GetComponent<PlayerMove>().canWalk = true;
             player.gameObject.GetComponent<PlayerMove>().canGlide = true;
