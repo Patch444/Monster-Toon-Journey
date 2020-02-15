@@ -391,7 +391,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   groundCheck: {fileID: 9025915812974430471}
-  groundCheckSize: {x: 0.5, y: 0.4, z: 0}
+  groundCheckSize: {x: 0.33, y: 0.4, z: 0}
   walkSpeed: 5
   jumpHeight: 7.5
   glideFactor: 0.075

@@ -102596,6 +102596,11 @@ PrefabInstance:
       propertyPath: gm
       value: 
       objectReference: {fileID: 167543816}
+    - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: groundCheckSize.x
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_Offset.y
