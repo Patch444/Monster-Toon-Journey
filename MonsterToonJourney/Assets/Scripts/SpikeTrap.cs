@@ -34,8 +34,8 @@ public class SpikeTrap : MonoBehaviour
     public GameObject spikes;
     private PlayerMove pm;
     private BoxLaunch boxLaunch;
-    private Vector3 spikeStart;
-    private Vector3 spikeEnd;
+    public Vector3 spikeStart;
+    public Vector3 spikeEnd;
     private Image boxIcon;
 
     public Scene currentScene;
@@ -58,6 +58,8 @@ public class SpikeTrap : MonoBehaviour
         StartTimer();
         boxLaunch = box.GetComponent<BoxLaunch>();
         spikeStart = spikes.transform.position;
+        spikeEnd = spikes.transform.position;
+        spikeEnd.y += 0.66f;
         Audio = GetComponent<AudioSource>();
         //boxLaunch.Launch();
     }
@@ -112,6 +114,7 @@ public class SpikeTrap : MonoBehaviour
             //start timer to move down
             if (hasGoneUp)
             {
+                //spikes.transform.position = spikeEnd;
                 retractTimer = retractTimer + Time.deltaTime;
                 SoundPlayed = false;
             }
@@ -139,7 +142,7 @@ public class SpikeTrap : MonoBehaviour
         }
         else
         {
-            box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             boxConstrained = false;
             StopAllCoroutines();
             
@@ -247,8 +250,8 @@ public class SpikeTrap : MonoBehaviour
     {
         if (!boxConstrained)
         {
-            box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
+            //box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            //box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation | RigidbodyConstraints2D.FreezePositionX;
             boxConstrained = true;
         }
             
