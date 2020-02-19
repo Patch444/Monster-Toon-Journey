@@ -330,8 +330,11 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   box: {fileID: 7108213160400060849}
   spikes: {fileID: 7108213159486285976}
+<<<<<<< Updated upstream
   spikeStart: {x: 0, y: 0, z: 0}
   spikeEnd: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> Stashed changes
   currentScene:
     m_Handle: 0
   sceneName: 

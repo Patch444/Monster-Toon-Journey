@@ -45,7 +45,10 @@ public class Button : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         Audio = GetComponent<AudioSource>();
+<<<<<<< Updated upstream
+=======
 
+>>>>>>> Stashed changes
         if (isSpikes)
         {
             foreach (GameObject spike in counterparts)
@@ -78,6 +81,8 @@ public class Button : MonoBehaviour
                 Audio.clip = BoxPlace;
                 Audio.Play();
             }
+<<<<<<< Updated upstream
+=======
             // Player picks up box
             
             else if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox && hasBox)
@@ -90,6 +95,7 @@ public class Button : MonoBehaviour
                 pm.Audio.Play();
             }
             
+>>>>>>> Stashed changes
 
             // Activates/deavtivates the button's counterpart.
             if (isPressed == true || hasBox == true)

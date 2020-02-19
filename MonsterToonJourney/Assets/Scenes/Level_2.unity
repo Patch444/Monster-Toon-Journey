@@ -23033,11 +23033,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> Patrick
+>>>>>>> Stashed changes
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: MinDistance
@@ -23137,12 +23146,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+=======
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+>>>>>>> Patrick
         type: 3}
       propertyPath: isActive
       value: 1
@@ -23152,6 +23165,7 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41d9cd866499f4d8e99d5b6b0aa7824f, type: 3}
 --- !u!1001 &1143532727
@@ -23162,6 +23176,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4376626703216871442, guid: 5194f26e2ff49dd4c90eaf22fd7557a9,
+=======
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+>>>>>>> Patrick
         type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -29022,11 +29044,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+>>>>>>> Patrick
+>>>>>>> Stashed changes
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
