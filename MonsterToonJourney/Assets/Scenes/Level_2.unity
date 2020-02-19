@@ -20295,6 +20295,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 2
   playerSR: {fileID: 0}
+  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -20302,6 +20303,9 @@ MonoBehaviour:
   PlayerHurt: {fileID: 0}
   Audio: {fileID: 0}
   HurtSoundObject: {fileID: 0}
+  currentScene:
+    m_Handle: 0
+  sceneName: 
   fearMeter: {fileID: 0}
 --- !u!4 &167543817
 Transform:
@@ -22042,11 +22046,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
-      objectReference: {fileID: 0}
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: hasBox
@@ -22072,6 +22071,11 @@ PrefabInstance:
       propertyPath: SpikeDown
       value: 
       objectReference: {fileID: 8300000, guid: 15e88e694f08b4df5b95e3f0133308bf, type: 3}
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: MinDistance
@@ -22082,15 +22086,10 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060847, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -22106,6 +22105,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060847, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41d9cd866499f4d8e99d5b6b0aa7824f, type: 3}
@@ -22839,7 +22848,8 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   sceneName: 
-  slider: {fileID: 0}
+  SFXslider: {fileID: 0}
+  MUSslider: {fileID: 0}
   mixer: {fileID: 0}
 --- !u!4 &1012756827
 Transform:
@@ -23023,10 +23033,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
+      propertyPath: isActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -23037,6 +23047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -23122,15 +23137,20 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
+      propertyPath: isActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -28938,10 +28958,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
+      propertyPath: isActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -28957,6 +28977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -29422,11 +29447,15 @@ MonoBehaviour:
   hasGoneUp: 0
   hasGoneDown: 1
   timerRunning: 0
+  isActive: 0
   SpikeUp: {fileID: 0}
   SpikeDown: {fileID: 0}
   BoxPlace: {fileID: 0}
   box: {fileID: 0}
   spikes: {fileID: 789004516}
+  currentScene:
+    m_Handle: 0
+  sceneName: 
 --- !u!23 &1441885775
 MeshRenderer:
   m_ObjectHideFlags: 0

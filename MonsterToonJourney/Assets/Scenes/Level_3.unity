@@ -20356,6 +20356,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 3
   playerSR: {fileID: 0}
+  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -20363,6 +20364,9 @@ MonoBehaviour:
   PlayerHurt: {fileID: 0}
   Audio: {fileID: 0}
   HurtSoundObject: {fileID: 0}
+  currentScene:
+    m_Handle: 0
+  sceneName: 
   fearMeter: {fileID: 0}
 --- !u!4 &167543817
 Transform:
@@ -34904,6 +34908,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Ground
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -41221,7 +41230,8 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   sceneName: 
-  slider: {fileID: 0}
+  SFXslider: {fileID: 0}
+  MUSslider: {fileID: 0}
   mixer: {fileID: 0}
 --- !u!4 &1357051747
 Transform:
@@ -41370,11 +41380,15 @@ MonoBehaviour:
   hasGoneUp: 0
   hasGoneDown: 1
   timerRunning: 0
+  isActive: 0
   SpikeUp: {fileID: 0}
   SpikeDown: {fileID: 0}
   BoxPlace: {fileID: 0}
   box: {fileID: 0}
   spikes: {fileID: 789004516}
+  currentScene:
+    m_Handle: 0
+  sceneName: 
 --- !u!23 &1441885775
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41512,6 +41526,11 @@ PrefabInstance:
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430661793827457472, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f9c9af34fd441e42a8d4b3a219b5b62, type: 3}
@@ -161048,6 +161067,11 @@ PrefabInstance:
     - target: {fileID: 7611401673093450876, guid: 08d1257ceeed97f4b924319a31873414,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611401673147256424, guid: 08d1257ceeed97f4b924319a31873414,
+        type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
