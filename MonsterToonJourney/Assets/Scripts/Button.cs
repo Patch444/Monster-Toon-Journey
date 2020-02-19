@@ -45,6 +45,7 @@ public class Button : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         Audio = GetComponent<AudioSource>();
+
         if (isSpikes)
         {
             foreach (GameObject spike in counterparts)
@@ -77,6 +78,18 @@ public class Button : MonoBehaviour
                 Audio.clip = BoxPlace;
                 Audio.Play();
             }
+            // Player picks up box
+            
+            else if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox && hasBox)
+            {
+                pm.hasBox = true;
+                hasBox = false;
+                boxIcon.enabled = true;
+                box.SetActive(false);
+                pm.Audio.clip = pm.boxGrab;
+                pm.Audio.Play();
+            }
+            
 
             // Activates/deavtivates the button's counterpart.
             if (isPressed == true || hasBox == true)
