@@ -23,6 +23,7 @@ public class SpikeTrap : MonoBehaviour
     public bool timerRunning;
     private bool boxConstrained;
     private bool SoundPlayed;
+    public bool isActive;
 
     public AudioClip SpikeUp;
     public AudioClip SpikeDown;
@@ -71,7 +72,7 @@ public class SpikeTrap : MonoBehaviour
         {
             
         }
-        if (!gm.isPaused)
+        if (!gm.isPaused && isActive == true)
         {
             //Add the box's rotation and position constraints back
             EnableBox();

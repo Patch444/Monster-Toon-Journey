@@ -324,6 +324,7 @@ MonoBehaviour:
   hasGoneUp: 0
   hasGoneDown: 1
   timerRunning: 0
+  isActive: 1
   SpikeUp: {fileID: 8300000, guid: 9b03c0d7561a148a19cc9ab3870cb4fc, type: 3}
   SpikeDown: {fileID: 8300000, guid: 15e88e694f08b4df5b95e3f0133308bf, type: 3}
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
