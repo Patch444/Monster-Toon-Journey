@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Intro.unity
     guid: e25a4ee792b44b44e9e921c211f0a9e3
   - enabled: 1
@@ -56,4 +56,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 934969adeaf34d94281c7300c6d43d0f
+  - enabled: 1
+    path: Assets/Scenes/Demo_KeyButton.unity
+    guid: 9c58d3428ebbe824f874cbf3fa97fd12
+  - enabled: 1
+    path: Assets/Scenes/GO_KBTest.unity
+    guid: fa762cbbcd507d049a14ebf966dacb99
   m_configObjects: {}

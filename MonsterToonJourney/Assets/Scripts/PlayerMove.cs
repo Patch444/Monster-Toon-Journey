@@ -58,15 +58,18 @@ public class PlayerMove : MonoBehaviour
     public bool canJump;
     public bool canWalk;
     bool isWalking;
+
     public bool canGlide;
     bool hasPlayedGlide;
     public bool hasBox;
     public bool hasShield;
     public bool isShielding;
+    public bool hasKey;
     public bool isDead;
     public bool beenHit;
     public bool isSwinging;
     public bool isByDoor;
+    public bool hasGlided;
 
     public Image shieldIcon;
 
@@ -106,14 +109,14 @@ public class PlayerMove : MonoBehaviour
         // Assigns the sprite renderer.
         sprite = GetComponent<SpriteRenderer>();
         lastDirection = 1;
-        if(GameObject.Find("ShieldIcon") != null)
+        if (GameObject.Find("ShieldIcon") != null)
         {
             shieldIcon = GameObject.Find("ShieldIcon").GetComponent<Image>();
         }
 
         //Sets up the Audio Source
         Audio = GetComponent<AudioSource>();
-        
+
 
         if (gm == null)
         {
@@ -125,12 +128,13 @@ public class PlayerMove : MonoBehaviour
         moveDirection = 0;
         previousMoveDirection = 0;
         isByDoor = false;
+        hasKey = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         if (!gm.isPaused)
         {
             // ReleaseArrow();
@@ -150,7 +154,7 @@ public class PlayerMove : MonoBehaviour
                 int count = 0;
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].tag != "Ground" )
+                    if (colliders[i].tag != "Ground")
                     {
                         count++;
 
@@ -161,7 +165,8 @@ public class PlayerMove : MonoBehaviour
                     canJump = false;
                     isWalking = false;
                     isAirborne = true;
-                    canGlide = true;
+                    if (isShielding == false)
+                        canGlide = true;
                 }
             }
             if (canWalk)
@@ -197,7 +202,7 @@ public class PlayerMove : MonoBehaviour
 
             }
 
-            
+
         }
         else
         {
@@ -206,7 +211,7 @@ public class PlayerMove : MonoBehaviour
             AudioListener.pause = true;
         }
         // GrabDirection();
-        
+
 
     }
 
@@ -270,7 +275,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Shielding()
     {
-        if(hasShield == true && isAirborne == false && Input.GetKeyDown(KeyCode.Q) && isShielding == false && shieldDelay == 1)
+        if (hasShield == true && isAirborne == false && Input.GetKeyDown(KeyCode.Q) && isShielding == false && shieldDelay == 1)
         {
             StartShieldTimer();
             Audio.clip = ShieldUp;
@@ -283,6 +288,7 @@ public class PlayerMove : MonoBehaviour
             StartShieldTimer();
             isShielding = true;
             canJump = false;
+            canGlide = false;
         }
         if (shieldTimer > 3)
         {
@@ -307,7 +313,7 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         //Check to see if the collision enter is the ground
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             //RaycastHit2D hitCenter = Physics2D.Raycast(transform.position, -this.transform.up, 1f, LayerMask.GetMask("Ground"));
             //RaycastHit2D hitLeft = Physics2D.Raycast(transform.position +Vector3.left*0.34f, transform.right *0.34f-this.transform.up, 1f, LayerMask.GetMask("Ground"));
@@ -335,25 +341,26 @@ public class PlayerMove : MonoBehaviour
             }
             //if(hitCenter.collider != null || hitLeft.collider != null || hitRight.collider != null)
             {
-                
+
             }
-            
+
         }
-        
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             bool isLanding = false;
             Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
-            if(colliders != null)
+            if (colliders != null)
             {
-                foreach(Collider2D collider in colliders)
+                foreach (Collider2D collider in colliders)
                 {
-                    if(collider.tag == "Ground")
+                    if (collider.tag == "Ground")
                     {
                         isLanding = true;
+                        hasGlided = false;
                         break;
                     }
                 }
@@ -404,7 +411,7 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Check to see if the collision exit is the ground
-        if(collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground")
         {
             Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
             if (colliders != null)
@@ -418,37 +425,38 @@ public class PlayerMove : MonoBehaviour
 
                     }
                 }
-                if(count == colliders.Length)
+                if (count == colliders.Length)
                 {
                     canJump = false;
                     isWalking = false;
                     isAirborne = true;
                     canGlide = true;
-                    if (lastDirection == 1 && !Input.GetKey(KeyCode.LeftShift))
+                    if (lastDirection == 1 && !Input.GetKey(KeyCode.LeftShift) && isShielding == false)
                     {
                         anim.Play("Monster Jump_Right");
                     }
-                        
-                    if (lastDirection == -1 && !Input.GetKey(KeyCode.LeftShift))
+
+                    if (lastDirection == -1 && !Input.GetKey(KeyCode.LeftShift) && isShielding == false)
                     {
                         anim.Play("Monster Jump_Left");
                     }
-                        
-                    if (lastDirection == 1 && Input.GetKeyDown(KeyCode.LeftShift))
+
+                    if (lastDirection == 1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false)
                     {
                         anim.Play("Parachute Open_Right");
+
                     }
-                       
-                    if (lastDirection == -1 && Input.GetKeyDown(KeyCode.LeftShift))
+
+                    if (lastDirection == -1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false)
                     {
                         anim.Play("Parachute Open_Left");
                     }
-                        
+
                 }
             }
-            
+
         }
-        
+
     }
 
     // Changes the idle sprite.
@@ -468,7 +476,7 @@ public class PlayerMove : MonoBehaviour
         {
             anim.Play("Shield_Idle_Right");
         }
-        if (isWalking == false && moveDirection == 0 && lastDirection == 1 && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 1 && shieldTimer <2)
+        if (isWalking == false && moveDirection == 0 && lastDirection == 1 && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 1 && shieldTimer < 2)
         {
             anim.Play("Shield_Idle_Yellow_Right");
         }
@@ -513,22 +521,37 @@ public class PlayerMove : MonoBehaviour
 
     private void Walk()
     {
-        if(Input.GetAxisRaw("Horizontal") > 0 && isByDoor == false)
+        if (Input.GetAxisRaw("Horizontal") > 0 && isByDoor == false)
         {
             //Move to the right
             RaycastHit2D hit = Physics2D.Raycast(transform.position, this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
             Debug.DrawLine(transform.position, Vector2.right * 0.7f + (Vector2)transform.position, Color.cyan);
             lastDirection = 1;
 
-            if (hit.collider == null )
+            if (hit.collider == null)
             {
                 transform.position += Vector3.right * Time.deltaTime * walkSpeed;
                 moveDirection = 1;
                 isWalking = true;
                 //Set animation to walk right
-                if (moveDirection == 1 && isAirborne == false && justLanded == false && isShielding == false && shieldTimer == 0)
+                if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == false && shieldTimer == 0)
                 {
                     anim.Play("Monster Walk_Right");
+                }
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && !Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                {
+                    anim.Play("Monster Jump_Right");
+                }
+
+
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
+                {
+                    anim.Play("Parachute Close And Jump_Right");
+                }
+
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift))
+                {
+                    Glide();
                 }
                 if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 0 && shieldTimer < 1)
                 {
@@ -538,7 +561,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Shield_Yellow_Right");
                 }
-                if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true &&  shieldTimer > 2)
+                if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 2)
                 {
                     anim.Play("Shield_Red_Right");
                 }
@@ -548,14 +571,14 @@ public class PlayerMove : MonoBehaviour
             }
             // Changes the idle spirte.
 
-            
+
 
         }
         else if (Input.GetAxisRaw("Horizontal") < 0 && isByDoor == false)
         {
             //Move to the left
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawLine(transform.position, Vector2.left * 0.7f + (Vector2) transform.position, Color.cyan);
+            Debug.DrawLine(transform.position, Vector2.left * 0.7f + (Vector2)transform.position, Color.cyan);
             lastDirection = -1;
             if (hit.collider == null)
             {
@@ -563,10 +586,19 @@ public class PlayerMove : MonoBehaviour
                 moveDirection = -1;
                 isWalking = true;
                 //Set animation to walk left.
-                if(moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == false && shieldTimer == 0)
+                if (moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == false && shieldTimer == 0)
                 {
                     anim.Play("Monster Walk_Left");
                 }
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && !Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                {
+                    anim.Play("Monster Jump_Left");
+                }
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
+                {
+                    anim.Play("Parachute Close And Jump_Left");
+                }
+
                 if (moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 0 && shieldTimer < 1)
                 {
                     anim.Play("Shield_Left");
@@ -582,7 +614,7 @@ public class PlayerMove : MonoBehaviour
 
             }
             //Will set animator with moveDirection
-            
+
             //Set animation to walk left
         }
         else
@@ -595,28 +627,32 @@ public class PlayerMove : MonoBehaviour
 
     private void Jump()
     {
-       isAirborne = true;
-       beforeJumpDirection = moveDirection;
-       playerBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-       if(lastDirection == 1 && !Input.GetKey(KeyCode.LeftShift))
+        isAirborne = true;
+        beforeJumpDirection = moveDirection;
+        playerBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
+        if (lastDirection == 1 && !Input.GetKey(KeyCode.LeftShift))
         {
             //Debug.Log("Jump Right");
             anim.Play("Monster Jump_Right");
         }
-       if(lastDirection == -1 && !Input.GetKey(KeyCode.LeftShift))
+        if (lastDirection == -1 && !Input.GetKey(KeyCode.LeftShift))
         {
             //Debug.Log("Jump Left");
             anim.Play("Monster Jump_Left");
         }
-        if (lastDirection == 1 && Input.GetKeyDown(KeyCode.LeftShift))
+        if (lastDirection == 1 && (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Right");
+            PlayGlideSound();
+            hasGlided = true;
         }
-        if (lastDirection == -1 && Input.GetKeyDown(KeyCode.LeftShift))
+        if (lastDirection == -1 && (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Left");
+            PlayGlideSound();
+            hasGlided = true;
         }
     }
 
@@ -634,14 +670,16 @@ public class PlayerMove : MonoBehaviour
                     anim.Play("Parachute Open_Left");
                 hasPlayedGlide = true;
                 PlayGlideSound();
+                hasGlided = true;
             }
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
                 if (lastDirection == 1)
-                    anim.Play("Parachute Close_Right");
+                    anim.Play("Parachute Close And Jump_Right");
                 else if (lastDirection == -1)
-                    anim.Play("Parachute Close_Left");
+                    anim.Play("Parachute Close And Jump_Left");
                 hasPlayedGlide = false;
+
             }
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -652,6 +690,7 @@ public class PlayerMove : MonoBehaviour
                     else if (lastDirection == -1)
                         anim.Play("Parachute Open_Left");
                     hasPlayedGlide = true;
+                    PlayGlideSound();
                 }
                 playerBody.drag += glideFactor;
                 if (playerBody.drag > maximumDrag)

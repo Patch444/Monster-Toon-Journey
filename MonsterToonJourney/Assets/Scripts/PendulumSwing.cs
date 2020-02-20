@@ -34,9 +34,9 @@ public class PendulumSwing : MonoBehaviour
         catcher = this.GetComponent<AxeCatchPlayer>();
         audio = GetComponent<AudioSource>();
 
-        targetAngle = new Quaternion(0, 0, maxAngle/180, 1);
-        targetPositionRight = catcher.target + 2*Vector3.right;
-        targetPositionLeft = catcher.target + 2*Vector3.left;
+        targetAngle = new Quaternion(0, 0, maxAngle / 180, 1);
+        targetPositionRight = catcher.target + 2 * Vector3.right;
+        targetPositionLeft = catcher.target + 2 * Vector3.left;
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class PendulumSwing : MonoBehaviour
             }
             if (targetAngle.z > 0)
             {
-                if(maxAngle > 0)
+                if (maxAngle > 0)
                 {
                     if (Mathf.Abs(maxAngle / 180 - transform.rotation.z) > 0.002)
                     {
@@ -93,11 +93,11 @@ public class PendulumSwing : MonoBehaviour
                         targetAngle = new Quaternion(0, 0, targetAngle.z * (-1), 1);
                     }
                 }
-                
+
             }
             else if (targetAngle.z < 0)
             {
-                if(maxAngle > 0)
+                if (maxAngle > 0)
                 {
                     if (Mathf.Abs(-maxAngle / 180 - transform.rotation.z) > 0.002)
                     {
@@ -105,8 +105,8 @@ public class PendulumSwing : MonoBehaviour
                         timeToMove += Time.deltaTime;
                         transform.rotation = Quaternion.Lerp(startAngle, targetAngle, timeToMove);
                         //if (catcher.hasPlayer)
-                            //player.transform.position += Vector3.right *8* Time.deltaTime;
-                            //player.transform.position = Vector3.Lerp(startPosition, targetPositionLeft, timeToMove);
+                        //player.transform.position += Vector3.right *8* Time.deltaTime;
+                        //player.transform.position = Vector3.Lerp(startPosition, targetPositionLeft, timeToMove);
 
                     }
                     else
@@ -125,7 +125,7 @@ public class PendulumSwing : MonoBehaviour
                         timeToMove += Time.deltaTime;
                         transform.rotation = Quaternion.Lerp(startAngle, targetAngle, timeToMove);
                         //if(catcher.hasPlayer)
-                            //player.transform.position = Vector3.Lerp(startPosition, targetPositionRight, timeToMove);
+                        //player.transform.position = Vector3.Lerp(startPosition, targetPositionRight, timeToMove);
                     }
                     else
                     {
@@ -134,10 +134,10 @@ public class PendulumSwing : MonoBehaviour
                         targetAngle = new Quaternion(0, 0, targetAngle.z * (-1), 1);
                     }
                 }
-                
+
             }
         }
-        
+
 
 
     }

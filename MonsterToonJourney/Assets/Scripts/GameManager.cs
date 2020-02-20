@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(false);
             }
         }
-        
+
     }
 
     public void StartFlickerTimer()
@@ -103,18 +103,18 @@ public class GameManager : MonoBehaviour
 
     public void HitFlicker()
     {
-        if(player.beenHit == true)
+        if (player.beenHit == true)
         {
             StartFlickerTimer();
             if (flickerTimer >= 0.0f && flickerTimer <= 0.1f)
             {
                 playerSR.enabled = false;
             }
-            if(flickerTimer >= 0.2f && flickerTimer <=0.3f)
+            if (flickerTimer >= 0.2f && flickerTimer <= 0.3f)
             {
                 playerSR.enabled = true;
             }
-            if(flickerTimer >= 0.4f && flickerTimer <= 0.5f)
+            if (flickerTimer >= 0.4f && flickerTimer <= 0.5f)
             {
                 playerSR.enabled = false;
             }
@@ -184,12 +184,18 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        //Checks if the player is on the KeyButton test level.
+        if (currentLevel == "Demo_KeyButton")
+        {
+            // Loads the KeyButton test game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_KBTest");
+        }
         // Checks if the player is on the first level.
-        if(currentLevel == "Level 1")
+        if (currentLevel == "Level 1")
         {
             // Loads the game over screen.
             UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L1");
-            
+
         }
 
         // Checks if the player is on the second level.
@@ -281,7 +287,7 @@ public class GameManager : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
         }
-        
+
 
     }
 

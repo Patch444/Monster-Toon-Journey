@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SceneManager : MonoBehaviour {
+public class SceneManager : MonoBehaviour
+{
 
 
     // Sets up a string to keep track of what level the player was on.
@@ -53,6 +54,12 @@ public class SceneManager : MonoBehaviour {
         }
 
 
+    }
+
+    // Transitions player to the KeyButton Test Level.
+    public void ToKeyButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Demo_KeyButton");
     }
 
     // Transitions the player to the level select.
@@ -154,6 +161,12 @@ public class SceneManager : MonoBehaviour {
     // Lets the player try the previous level again.
     public void TryAgain()
     {
+        // Checks if th player was on the KeyButton test level.
+        if (currentLevel == "Demo_KeyButton")
+        {
+            // Loads KeyButton test level.
+            ToKeyButton();
+        }
         // Checks if the player was on level one.
         if (currentLevel == "Level_1")
         {
@@ -200,11 +213,11 @@ public class SceneManager : MonoBehaviour {
     // Unlocks levels based on how far the player has gotten in the game.
     public void LevelUnlock()
     {
-        if(globalManager.howFar >= 2)
+        if (globalManager.howFar >= 2)
         {
             levelTwoBtn.SetActive(true);
         }
-        if(globalManager.howFar >= 3)
+        if (globalManager.howFar >= 3)
         {
             levelThreeBtn.SetActive(true);
         }

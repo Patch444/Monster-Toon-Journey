@@ -20982,6 +20982,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4376626703216871444, guid: 5194f26e2ff49dd4c90eaf22fd7557a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5194f26e2ff49dd4c90eaf22fd7557a9, type: 3}
 --- !u!4 &384108695 stripped
@@ -55216,11 +55221,14 @@ MonoBehaviour:
   hasGoneUp: 0
   hasGoneDown: 1
   timerRunning: 0
+  isActive: 0
   SpikeUp: {fileID: 0}
   SpikeDown: {fileID: 0}
   BoxPlace: {fileID: 0}
   box: {fileID: 0}
   spikes: {fileID: 789004516}
+  spikeStart: {x: 0, y: 0, z: 0}
+  spikeEnd: {x: 0, y: 0, z: 0}
   currentScene:
     m_Handle: 0
   sceneName: 
@@ -67798,6 +67806,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: hasShield
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67851,11 +67864,6 @@ PrefabInstance:
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: hasShield
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

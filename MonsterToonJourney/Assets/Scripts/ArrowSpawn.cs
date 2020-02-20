@@ -8,6 +8,7 @@ public class ArrowSpawn : MonoBehaviour
 {
     // Sets up bools to determine which direction the launcher will fire arrows.
     public bool isRightArrowLauncher;
+    public bool isActive;
 
     // Sets up the arrows.
     public GameObject rightArrow;
@@ -32,7 +33,7 @@ public class ArrowSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentArrow == null)
+        if (currentArrow == null && isActive == true)
         {
             SpawnArrow();
             Audio.clip = arrowLaunchSound;
@@ -44,7 +45,7 @@ public class ArrowSpawn : MonoBehaviour
     public void SpawnArrow()
     {
         // Checks if the launcher will fire right.
-        if(isRightArrowLauncher == true)
+        if (isRightArrowLauncher == true)
         {
             // Spawns a right-going arrow.
             currentArrow = Instantiate(rightArrow, launchPoint, Quaternion.identity);

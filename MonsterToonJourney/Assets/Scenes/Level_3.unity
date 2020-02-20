@@ -20693,6 +20693,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4376626703216871444, guid: 5194f26e2ff49dd4c90eaf22fd7557a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5194f26e2ff49dd4c90eaf22fd7557a9, type: 3}
 --- !u!1 &303456542
@@ -34972,15 +34977,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
-      propertyPath: m_TagString
-      value: Ground
+      propertyPath: isActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285978, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -41444,11 +41454,14 @@ MonoBehaviour:
   hasGoneUp: 0
   hasGoneDown: 1
   timerRunning: 0
+  isActive: 0
   SpikeUp: {fileID: 0}
   SpikeDown: {fileID: 0}
   BoxPlace: {fileID: 0}
   box: {fileID: 0}
   spikes: {fileID: 789004516}
+  spikeStart: {x: 0, y: 0, z: 0}
+  spikeEnd: {x: 0, y: 0, z: 0}
   currentScene:
     m_Handle: 0
   sceneName: 
@@ -41580,15 +41593,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5430661793827457477, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
-        type: 3}
-      propertyPath: launchForce
-      value: -0.1
-      objectReference: {fileID: 0}
     - target: {fileID: 3220220260522444150, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430661793827457477, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
+        type: 3}
+      propertyPath: launchForce
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f9c9af34fd441e42a8d4b3a219b5b62, type: 3}
