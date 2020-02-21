@@ -9,8 +9,8 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public bool hasUnpaused;
     public GameObject pauseMenu;
-    public int lives = 3;
-    public Sprite[] fearSprites = new Sprite[4];
+    public int lives = 4;
+    public Sprite[] fearSprites = new Sprite[5];
     public PlayerMove player;
     public string currentLevel = "Level 1";
     public SpriteRenderer playerSR;

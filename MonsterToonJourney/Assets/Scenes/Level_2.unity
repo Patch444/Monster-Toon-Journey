@@ -20286,12 +20286,13 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
-  lives: 3
+  lives: 4
   fearSprites:
-  - {fileID: -6498897625493745396, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 2161330927359191633, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: -7069021233604577826, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 4882965779941859427, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
   currentLevel: Level 2
   playerSR: {fileID: 0}
@@ -22061,6 +22062,21 @@ PrefabInstance:
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: MinDistance
@@ -22070,11 +22086,6 @@ PrefabInstance:
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -22090,16 +22101,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285977, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -23028,6 +23029,11 @@ PrefabInstance:
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: MinDistance
@@ -23037,11 +23043,6 @@ PrefabInstance:
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -23132,15 +23133,15 @@ PrefabInstance:
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -29027,6 +29028,11 @@ PrefabInstance:
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -29041,11 +29047,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285979, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -29650,7 +29651,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -8428441588425823462, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
+  m_Sprite: {fileID: 7952763614370864699, guid: c70ba0d419802a34faf072de16ee10a7,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -97442,7 +97443,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4,
+  m_Sprite: {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -106823,6 +106824,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279522, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -106876,11 +106882,6 @@ PrefabInstance:
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279522, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

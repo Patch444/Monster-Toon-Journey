@@ -39,6 +39,8 @@ public class PlayerMove : MonoBehaviour
     // public int arrowCount;
     public int lastDirection;
 
+    public int qPress;
+
     public Sprite idleLeft;
     public Sprite idleRight;
 
@@ -275,7 +277,11 @@ public class PlayerMove : MonoBehaviour
 
     public void Shielding()
     {
-        if (hasShield == true && isAirborne == false && Input.GetKeyDown(KeyCode.Q) && isShielding == false && shieldDelay == 1)
+        if(hasShield == true && qPress < 2 && shieldDelay == 1 && Input.GetKeyDown(KeyCode.Q))
+        {
+            qPress++;
+        }
+        if (hasShield == true && isAirborne == false && qPress == 1 && isShielding == false && shieldDelay == 1)
         {
             StartShieldTimer();
             Audio.clip = ShieldUp;
@@ -290,8 +296,9 @@ public class PlayerMove : MonoBehaviour
             canJump = false;
             canGlide = false;
         }
-        if (shieldTimer > 3)
+        if (shieldTimer > 3 || qPress == 2)
         {
+            qPress = 0;
             isShielding = false;
             Audio.clip = ShieldDown;
             Audio.Play();

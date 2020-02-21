@@ -672,12 +672,13 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
-  lives: 3
+  lives: 4
   fearSprites:
-  - {fileID: -6498897625493745396, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 2161330927359191633, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: -7069021233604577826, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 4882965779941859427, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
   currentLevel: Demo_KeyButton
   playerSR: {fileID: 0}
@@ -72393,6 +72394,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -72406,11 +72412,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -72695,6 +72696,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -72708,11 +72714,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -73174,7 +73175,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -8428441588425823462, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
+  m_Sprite: {fileID: 7952763614370864699, guid: c70ba0d419802a34faf072de16ee10a7,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -80697,6 +80698,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -80710,11 +80716,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -81712,6 +81713,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -81725,11 +81731,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -82281,6 +82282,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -82294,11 +82300,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -83064,7 +83065,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4,
+  m_Sprite: {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -83110,6 +83111,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915811824162045, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: gm
@@ -83119,6 +83125,16 @@ PrefabInstance:
         type: 3}
       propertyPath: groundCheckSize.x
       value: 0.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10750413
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7452998
       objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
@@ -83174,21 +83190,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915811824162045, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.10750413
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.7452998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c974a2e40a114b83337b94e73b245, type: 3}
@@ -83351,6 +83352,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 493757143641821562, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_Enabled
@@ -83364,11 +83370,6 @@ PrefabInstance:
     - target: {fileID: 493757143641821565, guid: ad4665a23773744798df33c5d64008a4,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 493757143641821564, guid: ad4665a23773744798df33c5d64008a4,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

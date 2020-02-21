@@ -20175,12 +20175,13 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
-  lives: 3
+  lives: 4
   fearSprites:
-  - {fileID: -6498897625493745396, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 2161330927359191633, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: -7069021233604577826, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 4882965779941859427, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
   currentLevel: Level 1
   playerSR: {fileID: 0}
@@ -67481,7 +67482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338, y: 247}
+  m_AnchoredPosition: {x: -240, y: 175}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1669169315
@@ -67504,7 +67505,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: -8428441588425823462, guid: 9cc01d38d9ca1274bb7cbabb963824cb,
+  m_Sprite: {fileID: 7952763614370864699, guid: c70ba0d419802a34faf072de16ee10a7,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -101630,7 +101631,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4,
+  m_Sprite: {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -102551,6 +102552,16 @@ PrefabInstance:
       propertyPath: groundCheckSize.x
       value: 0.33
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10750413
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7452998
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -102605,16 +102616,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.10750413
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.7452998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c974a2e40a114b83337b94e73b245, type: 3}

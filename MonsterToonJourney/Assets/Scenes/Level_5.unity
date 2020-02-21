@@ -20452,12 +20452,13 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
-  lives: 3
+  lives: 4
   fearSprites:
-  - {fileID: -6498897625493745396, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 2161330927359191633, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: -7069021233604577826, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 4882965779941859427, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
   currentLevel: Level 5
   playerSR: {fileID: 1839942572}
@@ -68018,7 +68019,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4,
+  m_Sprite: {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0

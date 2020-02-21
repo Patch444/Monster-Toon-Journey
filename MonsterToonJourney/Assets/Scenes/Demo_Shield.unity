@@ -20377,12 +20377,13 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
-  lives: 3
+  lives: 4
   fearSprites:
-  - {fileID: -6498897625493745396, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 2161330927359191633, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: -7069021233604577826, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
-  - {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 5306069857807690778, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 4882965779941859427, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
+  - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
   currentLevel: Shield Demo
   playerSR: {fileID: 0}
@@ -108336,7 +108337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1730895640}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -108349,7 +108350,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e2e01b8998845fe4eb1dc0f12ef5c088, type: 3}
+  m_Sprite: {fileID: -2906203513720773286, guid: c70ba0d419802a34faf072de16ee10a7,
+    type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -108642,6 +108644,17 @@ PrefabInstance:
       propertyPath: hasShield
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5483628303372777972, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 4467917683588469686, guid: 5baace075f40f49f5b5ed0aa27434041,
+        type: 2}
+    - target: {fileID: 9025915811824162046, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -108697,17 +108710,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9025915811824162046, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5483628303372777972, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4467917683588469686, guid: 5baace075f40f49f5b5ed0aa27434041,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042c974a2e40a114b83337b94e73b245, type: 3}
 --- !u!20 &1839942570 stripped
@@ -108779,7 +108781,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 8142960924088936550, guid: 305e5445fe3a15d458715c51f6cd5de4,
+  m_Sprite: {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
