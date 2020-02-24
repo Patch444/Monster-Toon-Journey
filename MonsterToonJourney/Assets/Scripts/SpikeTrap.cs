@@ -60,7 +60,7 @@ public class SpikeTrap : MonoBehaviour
         boxLaunch = box.GetComponent<BoxLaunch>();
         spikeStart = spikes.transform.position;
         spikeEnd = spikes.transform.position;
-        spikeEnd.y += 0.66f;
+        spikeEnd.y += 1.5f;
         Audio = GetComponent<AudioSource>();
         //boxLaunch.Launch();
     }
@@ -102,20 +102,26 @@ public class SpikeTrap : MonoBehaviour
             //start timer to stop spikes
             if (movingUp)
             {
-                upTimer = upTimer + Time.deltaTime;
+                //upTimer = upTimer + Time.deltaTime;
                 spikes.transform.Translate(Vector2.up * upSpeed);
             }
             //stop spikes
-            if (upTimer >= 0.2f && movingUp)
+            /*if (upTimer >= 0.2f && movingUp)
             {
                 movingUp = false;
                 upTimer = 0f;
+                hasGoneUp = true;
+            }*/
+            if (spikes.transform.position.y >= spikeEnd.y && movingUp)
+            {
+                movingUp = false;
+                //upTimer = 0f;
                 hasGoneUp = true;
             }
             //start timer to move down
             if (hasGoneUp)
             {
-                //spikes.transform.position = spikeEnd;
+                spikes.transform.position = spikeEnd;
                 retractTimer = retractTimer + Time.deltaTime;
                 SoundPlayed = false;
             }
