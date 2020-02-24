@@ -13,6 +13,7 @@ TagManager:
   - LeftGrabBox
   - RightGrabBox
   - GrabBox
+  - Slime
   layers:
   - Default
   - TransparentFX

@@ -399,6 +399,7 @@ MonoBehaviour:
   spawnPosition: {x: 0, y: 0, z: 0}
   moveDirection: 0
   lastDirection: 0
+  qPress: 0
   idleLeft: {fileID: 0}
   idleRight: {fileID: 0}
   shieldIdleLeft: {fileID: 0}
@@ -412,6 +413,7 @@ MonoBehaviour:
     type: 3}
   shieldTimer: 0
   shieldDelay: 0
+  maxVelocity: 10
   isAirborne: 0
   justLanded: 0
   canJump: 0
@@ -420,10 +422,12 @@ MonoBehaviour:
   hasBox: 0
   hasShield: 0
   isShielding: 0
+  hasKey: 0
   isDead: 0
   beenHit: 0
   isSwinging: 0
   isByDoor: 0
+  hasGlided: 0
   shieldIcon: {fileID: 0}
   boxGrab: {fileID: 8300000, guid: 5d552c11315234c4bacd775a5f7959e1, type: 3}
   ShieldUp: {fileID: 8300000, guid: 8d5d643a3576b41f589a8fc596246115, type: 3}

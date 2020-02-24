@@ -54,6 +54,7 @@ public class PlayerMove : MonoBehaviour
 
     public float shieldTimer;
     public float shieldDelay;
+    public float maxVelocity;
 
     public bool isAirborne;
     public bool justLanded;
@@ -144,6 +145,12 @@ public class PlayerMove : MonoBehaviour
             IdleDirection();
             anim.enabled = true;
             AudioListener.pause = false;
+
+            if(playerBody.velocity.magnitude > maxVelocity)
+            {
+                playerBody.velocity = playerBody.velocity.normalized * maxVelocity;
+            }
+
             if (GetComponent<Rigidbody2D>().constraints == RigidbodyConstraints2D.FreezeAll)
             {
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
