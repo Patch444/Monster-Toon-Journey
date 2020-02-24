@@ -184,6 +184,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        // Checks if the player is on the Slimes test level.
+        if (currentLevel == "Demo_Slimes")
+        {
+            // Loads the Slimes test game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_STest");
+        }
         //Checks if the player is on the KeyButton test level.
         if (currentLevel == "Demo_KeyButton")
         {

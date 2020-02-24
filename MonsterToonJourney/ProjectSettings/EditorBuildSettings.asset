@@ -65,4 +65,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GO_KBTest.unity
     guid: fa762cbbcd507d049a14ebf966dacb99
+  - enabled: 1
+    path: Assets/Scenes/Demo_Slimes.unity
+    guid: a37a08a30b836224ca473b0275133d8a
+  - enabled: 1
+    path: Assets/Scenes/GO_STest.unity
+    guid: d31c0148d02c3764b90b71bca30d35d6
   m_configObjects: {}

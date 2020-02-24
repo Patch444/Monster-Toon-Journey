@@ -56,6 +56,12 @@ public class SceneManager : MonoBehaviour
 
     }
 
+    // Transitions player to the Slimes Test Level.
+    public void ToSlimes()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Demo_Slimes");
+    }
+
     // Transitions player to the KeyButton Test Level.
     public void ToKeyButton()
     {
@@ -161,7 +167,13 @@ public class SceneManager : MonoBehaviour
     // Lets the player try the previous level again.
     public void TryAgain()
     {
-        // Checks if th player was on the KeyButton test level.
+        // Checks if the player was on the Slime test level.
+        if (currentLevel == "Demo_Slimes")
+        {
+            // Loads Slimes test level.
+            ToSlimes();
+        }
+        // Checks if the player was on the KeyButton test level.
         if (currentLevel == "Demo_KeyButton")
         {
             // Loads KeyButton test level.
