@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BounceSlimeBox : MonoBehaviour
 {
-    public BounceSlime slime;
     public bool isRightBox;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +23,11 @@ public class BounceSlimeBox : MonoBehaviour
         {
             if(isRightBox == true)
             {
-                slime.moveDirection = -1;
+                other.GetComponent<BounceSlime>().moveDirection = -1;
             }
             else
             {
-                slime.moveDirection = 1;
+                other.GetComponent<BounceSlime>().moveDirection = 1;
             }
         }
     }
