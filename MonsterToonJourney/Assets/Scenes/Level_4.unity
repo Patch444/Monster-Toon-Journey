@@ -20188,6 +20188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbbeaace6ad4ec2a44a86bbeef2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  immune: 0
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
@@ -20201,6 +20202,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 4
   playerSR: {fileID: 0}
+  pSS: {fileID: 0}
   isInFinal: 0
   flickerDuration: 3
   flickerTimer: 0
@@ -20286,10 +20288,10 @@ Transform:
   - {fileID: 1900230298}
   - {fileID: 728988639}
   - {fileID: 1262109010}
-  - {fileID: 1756315086}
   - {fileID: 1482996662}
   - {fileID: 1789701925}
   - {fileID: 1522573519}
+  - {fileID: 1756315086}
   - {fileID: 251238705}
   - {fileID: 1062376296}
   - {fileID: 371458971}
@@ -21947,6 +21949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
+  gm: {fileID: 0}
+  pSS: {fileID: 0}
 --- !u!4 &1062376296 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6302195499309138889, guid: ebfaa61070ea25e4ab823711a8672da9,
@@ -28499,7 +28503,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 252189386}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1482996663
 TilemapRenderer:
@@ -70239,7 +70243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 252189386}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1522573520
 TilemapRenderer:
@@ -73333,7 +73337,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 252189386}
-  m_RootOrder: 11
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1756315087
 BoxCollider2D:
@@ -73580,7 +73584,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 252189386}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1789701926
 BoxCollider2D:

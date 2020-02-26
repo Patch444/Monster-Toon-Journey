@@ -313,7 +313,7 @@ public class ArrowBehavior : MonoBehaviour
             //this.GetComponent<SpriteRenderer>().enabled = false;
             //this.GetComponent<BoxCollider2D>().enabled = false;
             // Decrements player's lives.
-            pm.beenHit = true;
+            //pm.beenHit = true;
             gm.TakeHit();
 
             // Disables the arrow.

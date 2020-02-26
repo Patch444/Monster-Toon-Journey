@@ -73,6 +73,7 @@ public class PlayerMove : MonoBehaviour
     public bool isSwinging;
     public bool isByDoor;
     public bool hasGlided;
+    public bool hasShieldSlime;
 
     public Image shieldIcon;
 

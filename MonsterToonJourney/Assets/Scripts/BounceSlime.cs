@@ -28,7 +28,12 @@ public class BounceSlime : MonoBehaviour
     {
         if (!gm.isPaused)
         {
+            anim.enabled = true;
             Move();
+        }
+        else
+        {
+            anim.enabled = false;
         }
         
     }
@@ -63,7 +68,7 @@ public class BounceSlime : MonoBehaviour
 
     public void OnCollision(Collision2D collision)
     {
-        if(collision.otherCollider.tag == "Player")
+        if(collision.otherCollider.tag == "Player" && !gm.isPaused)
         {
             moveDirection = moveDirection * -1;
         }

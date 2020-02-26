@@ -36,15 +36,15 @@ public class Flamethrower : MonoBehaviour
         }
     }
 
-    public void OnTriggerEnter2D (Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" && pm.hasShield == true && pm.isShielding == false)
         {
-            pm.beenHit = true;
+            //pm.beenHit = true;
             gm.LoseLife();
         }
     }
-    public void OnTriggerStay2D (Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
         //when player comes near allow pickup
         if (other.tag == "Player" && pm.hasShield == true && pm.isShielding == true)
@@ -55,19 +55,19 @@ public class Flamethrower : MonoBehaviour
         }
         else
         {
-            pm.beenHit = true;
+            //pm.beenHit = true;
             gm.LoseLife();
         }
-   
+
     }
 
-    
-    public void OnTriggerExit2D (Collider2D other)
+
+    public void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player" && pm.hasShield)
         {
             isShielded = false;
         }
     }
-    
+
 }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public bool immune = false;
     public bool isPaused;
     public bool hasUnpaused;
     public GameObject pauseMenu;
@@ -14,6 +15,8 @@ public class GameManager : MonoBehaviour
     public PlayerMove player;
     public string currentLevel = "Level 1";
     public SpriteRenderer playerSR;
+
+    public PlayerShieldSlime pSS;
 
     public bool isInFinal;
 
@@ -45,6 +48,8 @@ public class GameManager : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
         fearMeter = fearSprites[lives];
+
+        pSS = GameObject.Find("PlayerShieldSlime").GetComponent<PlayerShieldSlime>();
 
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         sceneName = currentScene.name;
@@ -103,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void HitFlicker()
     {
-        if (player.beenHit == true)
+        if (player.beenHit == true && player.hasShieldSlime == false)
         {
             StartFlickerTimer();
             if (flickerTimer >= 0.0f && flickerTimer <= 0.1f)
@@ -146,25 +151,43 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
-        Audio.Play();
-        lives--;
-        fearMeter = fearSprites[lives];
-
-        player.transform.position = player.spawnPosition;
-        if (lives > 0)
+        
+        if (player.hasShieldSlime == true)
         {
-            player.isDead = false;
-
-            GameObject.Find("Fear Meter").GetComponent<Image>().sprite = fearMeter;
+            pSS.Disperse();
+            StartCoroutine(ImmunityFrames());
+            return;
         }
         else
         {
-            GameOver();
+            player.beenHit = true;
+            Audio.Play();
+            lives--;
+            fearMeter = fearSprites[lives];
+
+            player.transform.position = player.spawnPosition;
+            if (lives > 0)
+            {
+                player.isDead = false;
+
+                GameObject.Find("Fear Meter").GetComponent<Image>().sprite = fearMeter;
+            }
+            else
+            {
+                GameOver();
+            }
         }
     }
 
     public void TakeHit()
     {
+        if (player.hasShieldSlime == true)
+        {
+            pSS.Disperse();
+            StartCoroutine(ImmunityFrames());
+            return;
+        }
+        player.beenHit = true;
         Audio.Play();
         lives--;
         fearMeter = fearSprites[lives];
@@ -181,7 +204,13 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
-
+    public IEnumerator ImmunityFrames()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        player.hasShieldSlime = false;
+        pSS.anim.SetBool("wasUsed", false);
+        immune = false;
+    }
     public void GameOver()
     {
         // Checks if the player is on the Slimes test level.
