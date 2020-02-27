@@ -32,6 +32,8 @@ public class Button : MonoBehaviour
 
 
     public AudioClip BoxPlace;
+    public AudioClip ButtonDown;
+    public AudioClip ButtonUp;
 
     private AudioSource Audio;
 
@@ -213,6 +215,11 @@ public class Button : MonoBehaviour
         {
             canInteract = true;
             isPressed = true;
+            if (!hasBox)
+            {
+                Audio.clip = ButtonDown;
+                Audio.Play();
+            }
         }
     }
     public void OnTriggerExit2D(Collider2D other)
@@ -222,6 +229,11 @@ public class Button : MonoBehaviour
         {
             canInteract = false;
             isPressed = false;
+            if (!hasBox)
+            {
+                Audio.clip = ButtonUp;
+                Audio.Play();
+            }
         }
     }
 }

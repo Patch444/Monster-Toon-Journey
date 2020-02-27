@@ -28,8 +28,8 @@ public class Key : MonoBehaviour
             {
                 //Debug.Log("Player picked up a shield");
                 pm.hasKey = true;
-                // pm.Audio.clip = pm.KeyGrab;
-                // pm.Audio.Play();
+                pm.Audio.clip = pm.keyGrab;
+                pm.Audio.Play();
                 keyIcon.enabled = true;
                 Destroy(this.gameObject);
             }

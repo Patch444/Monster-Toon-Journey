@@ -29,6 +29,8 @@ public class DoorLocked : MonoBehaviour
             // Will play door opening animation.
             this.gameObject.SetActive(false);
             pm.hasKey = false;
+            pm.Audio.clip = pm.keyUse;
+            pm.Audio.Play();
             keyIcon.enabled = false;
         }
     }

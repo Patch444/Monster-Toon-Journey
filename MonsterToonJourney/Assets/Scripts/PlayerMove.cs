@@ -81,6 +81,8 @@ public class PlayerMove : MonoBehaviour
     public AudioClip ShieldUp;
     public AudioClip ShieldDown;
     public AudioClip ShieldGrab;
+    public AudioClip keyGrab;
+    public AudioClip keyUse;
 
     public AudioClip[] landingSounds = new AudioClip[4];
     public AudioClip[] glideSounds = new AudioClip[3];

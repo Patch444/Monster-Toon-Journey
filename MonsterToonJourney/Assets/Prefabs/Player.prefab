@@ -615,6 +615,8 @@ MonoBehaviour:
   ShieldUp: {fileID: 8300000, guid: 8d5d643a3576b41f589a8fc596246115, type: 3}
   ShieldDown: {fileID: 8300000, guid: bc3fac2b63ed54e0da7c88550ecb7038, type: 3}
   ShieldGrab: {fileID: 8300000, guid: 0d2de4359e69546ab8c71020e48b1d2b, type: 3}
+  keyGrab: {fileID: 8300000, guid: c4f6b4d00412d4eada435ec9df6432d6, type: 3}
+  keyUse: {fileID: 8300000, guid: 277a7f06bc7244ee4b90a2ceb4c43cbc, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 0534d3e5e5d5844c4a5b41d4378d57b5, type: 3}
   - {fileID: 8300000, guid: d947ad2cf592b40b487eeb4d178a4a0c, type: 3}
