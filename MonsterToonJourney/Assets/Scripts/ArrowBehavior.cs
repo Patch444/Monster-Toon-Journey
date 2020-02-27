@@ -299,7 +299,7 @@ public class ArrowBehavior : MonoBehaviour
     {
         // Debug.Log(collider.tag);
         // Checks if the arrow collided with a wall.
-        if (collider.tag == "Ground")
+        if (collider.tag == "Ground" || collider.tag == "MimicWall")
         {
             hitWall = true;
             Audio.clip = arrowHitSound;

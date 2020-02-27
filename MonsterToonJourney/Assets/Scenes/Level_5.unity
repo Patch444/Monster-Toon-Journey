@@ -20449,6 +20449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbbeaace6ad4ec2a44a86bbeef2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  immune: 0
   isPaused: 0
   hasUnpaused: 0
   pauseMenu: {fileID: 0}
@@ -20462,6 +20463,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 5
   playerSR: {fileID: 1839942572}
+  pSS: {fileID: 0}
   isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
@@ -48800,6 +48802,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pm: {fileID: 0}
+  gm: {fileID: 0}
+  pSS: {fileID: 0}
 --- !u!1001 &1010091413
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67792,6 +67796,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: hasShield
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 152878528006205360, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_RootOrder
@@ -67806,11 +67815,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: hasShield
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
