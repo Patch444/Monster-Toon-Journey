@@ -23,7 +23,7 @@ public class HurtBox : MonoBehaviour
         //when player comes near allow pickup
         if (other.tag == "Player" && pm.beenHit == false)
         {
-            //pm.beenHit = true;
+            pm.beenHit = true;
             gm.TakeHit();
         }
     }

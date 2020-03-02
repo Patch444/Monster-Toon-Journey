@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public bool immune = false;
     public bool isPaused;
     public bool hasUnpaused;
+    public bool hasUsedSlime;
     public GameObject pauseMenu;
     public int lives = 4;
     public Sprite[] fearSprites = new Sprite[5];
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject HurtSoundObject;
 
+
     public Scene currentScene;
     public string sceneName;
 
@@ -45,6 +46,8 @@ public class GameManager : MonoBehaviour
     {
         // Assigns the Global Manager.
         globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
+
+        hasUsedSlime = false;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
         fearMeter = fearSprites[lives];
@@ -108,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     public void HitFlicker()
     {
-        if (player.beenHit == true && player.hasShieldSlime == false)
+        if (player.beenHit == true)
         {
             StartFlickerTimer();
             if (flickerTimer >= 0.0f && flickerTimer <= 0.1f)
@@ -155,7 +158,11 @@ public class GameManager : MonoBehaviour
         if (player.hasShieldSlime == true)
         {
             pSS.Disperse();
-            StartCoroutine(ImmunityFrames());
+            if (player.immune == false)
+            {
+                player.immune = true;
+                StartCoroutine(ImmunityFrames());
+            }
             return;
         }
         else
@@ -184,7 +191,11 @@ public class GameManager : MonoBehaviour
         if (player.hasShieldSlime == true)
         {
             pSS.Disperse();
-            StartCoroutine(ImmunityFrames());
+            if (player.immune == false)
+            {
+                player.immune = true;
+                StartCoroutine(ImmunityFrames());
+            }
             return;
         }
         player.beenHit = true;
@@ -204,13 +215,18 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
     }
+
     public IEnumerator ImmunityFrames()
     {
-        yield return new WaitForSecondsRealtime(2f);
-        player.hasShieldSlime = false;
-        pSS.anim.SetBool("wasUsed", false);
-        immune = false;
+        yield return new WaitForSeconds(1.5f);
+        if (player.immune == true)
+        {
+            player.hasShieldSlime = false;
+            pSS.anim.SetBool("wasUsed", false);
+            player.immune = false;
+        }
     }
+
     public void GameOver()
     {
         // Checks if the player is on the Slimes test level.

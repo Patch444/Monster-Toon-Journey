@@ -58,7 +58,7 @@ public class ShieldSlime : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player" && pm.hasShieldSlime == false)
+        if (other.tag == "Player" && other.GetComponent<PlayerMove>().hasShieldSlime == false && pm.beenHit == false)
         {
             pm.hasShieldSlime = true;
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -68,4 +68,5 @@ public class ShieldSlime : MonoBehaviour
             //Invoke("CleanUp", 2);
         }
     }
+
 }

@@ -61,6 +61,7 @@ public class PlayerMove : MonoBehaviour
     public bool canJump;
     public bool canWalk;
     bool isWalking;
+    public bool immune;
 
     public bool canGlide;
     bool hasPlayedGlide;
@@ -73,6 +74,7 @@ public class PlayerMove : MonoBehaviour
     public bool isSwinging;
     public bool isByDoor;
     public bool hasGlided;
+    public bool isGliding;
     public bool hasShieldSlime;
 
     public Image shieldIcon;
@@ -103,6 +105,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        immune = false;
         //arrowCount = 0;
         // Assigns animator.
         anim = GetComponent<Animator>();
@@ -287,7 +290,7 @@ public class PlayerMove : MonoBehaviour
 
     public void Shielding()
     {
-        if(hasShield == true && qPress < 2 && shieldDelay == 1 && Input.GetKeyDown(KeyCode.Q))
+        if(hasShield == true && qPress < 2 && shieldDelay == 1 && Input.GetKeyDown(KeyCode.Q) && isAirborne == false)
         {
             qPress++;
         }
@@ -559,7 +562,10 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Jump_Right");
                 }
-
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                {
+                    anim.Play("Parachute Open_Right");
+                }
 
                 if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
                 {
@@ -574,7 +580,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Shield_Right");
                 }
-                if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 1 && shieldTimer < 2)
+                if (moveDirection == 1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true  && shieldTimer > 1 && shieldTimer < 2)
                 {
                     anim.Play("Shield_Yellow_Right");
                 }
@@ -611,12 +617,16 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Jump_Left");
                 }
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                {
+                    anim.Play("Parachute Open_Left");
+                }
                 if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
                 {
                     anim.Play("Parachute Close And Jump_Left");
                 }
 
-                if (moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 0 && shieldTimer < 1)
+                if (moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 0 && shieldTimer < 1 )
                 {
                     anim.Play("Shield_Left");
                 }
@@ -675,7 +685,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Glide()
     {
-        if (!isSwinging)
+        if (!isSwinging && isShielding == false)
         {
             //Hey Patrick is it working?
             float previousY = this.transform.position.y;
@@ -687,7 +697,7 @@ public class PlayerMove : MonoBehaviour
                     anim.Play("Parachute Open_Left");
                 hasPlayedGlide = true;
                 PlayGlideSound();
-                hasGlided = true;
+                isGliding = true;
             }
             else if (Input.GetKeyUp(KeyCode.LeftShift))
             {
@@ -696,6 +706,7 @@ public class PlayerMove : MonoBehaviour
                 else if (lastDirection == -1)
                     anim.Play("Parachute Close And Jump_Left");
                 hasPlayedGlide = false;
+                isGliding = false;
 
             }
             if (Input.GetKey(KeyCode.LeftShift))

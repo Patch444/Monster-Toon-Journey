@@ -24,7 +24,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            //pm.beenHit = true;
+            pm.beenHit = true;
             //collision.GetComponent<PlayerMove>().isDead = true;
             gm.LoseLife();
             ;
