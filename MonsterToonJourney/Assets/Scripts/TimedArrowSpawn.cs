@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-public class ArrowSpawn : MonoBehaviour
+public class TimedArrowSpawn : MonoBehaviour
 {
     // Sets up bools to determine which direction the launcher will fire arrows.
     public bool isRightArrowLauncher;
     public bool isActive;
 
+    public float spawnTimer;
+    public float spawnTimerDuration;
+
     // Sets up the arrows.
     public GameObject rightArrow;
     public GameObject leftArrow;
-    private GameObject currentArrow;
     private GameManager gm;
+
 
     // Sets up where the arrows will launch.
     private Vector3 launchPoint;
@@ -26,10 +27,11 @@ public class ArrowSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        spawnTimer = spawnTimerDuration;
         launchPoint = transform.position;
         SpawnArrow();
         Audio = GetComponent<AudioSource>();
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -37,14 +39,20 @@ public class ArrowSpawn : MonoBehaviour
     {
         if (!gm.isPaused)
         {
-            if (currentArrow == null && isActive == true)
+            SpawnCountdown();
+            if (spawnTimer <= 0 && isActive == true)
             {
                 SpawnArrow();
                 Audio.clip = arrowLaunchSound;
                 Audio.Play();
+                spawnTimer = spawnTimerDuration;
             }
         }
+    }
 
+    public void SpawnCountdown()
+    {
+        spawnTimer = spawnTimer - Time.deltaTime;
     }
 
     // Spawns an arrow.
@@ -54,12 +62,15 @@ public class ArrowSpawn : MonoBehaviour
         if (isRightArrowLauncher == true)
         {
             // Spawns a right-going arrow.
-            currentArrow = Instantiate(rightArrow, launchPoint, Quaternion.identity);
+            Instantiate(rightArrow, launchPoint, Quaternion.identity);
         }
         // Spawns a left-going arrow.
         else
         {
-            currentArrow = Instantiate(leftArrow, launchPoint, Quaternion.identity);
+            Instantiate(leftArrow, launchPoint, Quaternion.identity);
         }
     }
 }
+
+
+

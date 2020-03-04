@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         if (!isPaused)
         {
             HitFlicker();
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = true;
             }
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
         else
         {
             pauseMenu.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = false;
                 hasUnpaused = true;
