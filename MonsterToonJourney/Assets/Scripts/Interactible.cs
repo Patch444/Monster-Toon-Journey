@@ -9,12 +9,14 @@ public class Interactible : MonoBehaviour
     public bool canInteract;
     private PlayerMove pm;
     private Image boxIcon;
+    private GameObject fm;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
+        fm = GameObject.Find("Fear Meter");
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -45,6 +47,7 @@ public class Interactible : MonoBehaviour
                 pm.Audio.clip = pm.boxGrab;
                 pm.Audio.Play();
                 boxIcon.enabled = true;
+                boxIcon.transform.SetParent(fm.transform);
                 Destroy(this.gameObject);
             }
         }

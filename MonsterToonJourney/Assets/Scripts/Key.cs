@@ -9,6 +9,7 @@ public class Key : MonoBehaviour
     public bool canInteract;
     private PlayerMove pm;
     private Image keyIcon;
+    private GameObject fm;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,7 @@ public class Key : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         keyIcon = GameObject.Find("Key Icon").GetComponent<Image>();
         keyIcon.enabled = false;
+        fm = GameObject.Find("Fear Meter");
     }
 
     // Update is called once per frame
@@ -31,6 +33,7 @@ public class Key : MonoBehaviour
                 pm.Audio.clip = pm.keyGrab;
                 pm.Audio.Play();
                 keyIcon.enabled = true;
+                keyIcon.transform.SetParent(fm.transform);
                 Destroy(this.gameObject);
             }
         }

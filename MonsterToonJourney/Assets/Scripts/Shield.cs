@@ -9,11 +9,13 @@ public class Shield : MonoBehaviour
     public bool canInteract;
     private PlayerMove pm;
     private Image shieldIcon;
+    private GameObject fm;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
+        fm = GameObject.Find("Fear Meter");
         shieldIcon = GameObject.Find("ShieldIcon").GetComponent<Image>();
         shieldIcon.enabled = false;
     }
@@ -46,6 +48,8 @@ public class Shield : MonoBehaviour
                 pm.Audio.clip = pm.ShieldGrab;
                 pm.Audio.Play();
                 shieldIcon.enabled = true;
+                shieldIcon.transform.SetParent(fm.transform);
+
                 Destroy(this.gameObject);
             }
         }

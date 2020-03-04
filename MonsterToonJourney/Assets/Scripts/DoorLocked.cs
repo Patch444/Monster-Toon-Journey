@@ -8,6 +8,7 @@ public class DoorLocked : MonoBehaviour
     GameManager gm;
     private PlayerMove pm;
     private Image keyIcon;
+    private GameObject fm;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,7 @@ public class DoorLocked : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         keyIcon = GameObject.Find("Key Icon").GetComponent<Image>();
+        fm = GameObject.Find("Fear Meter");
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class DoorLocked : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && pm.hasKey)
+        if(other.tag == "Player" && pm.hasKey && !gm.isPaused)
         {
             // Will play door opening animation.
             this.gameObject.SetActive(false);
@@ -32,6 +34,7 @@ public class DoorLocked : MonoBehaviour
             pm.Audio.clip = pm.keyUse;
             pm.Audio.Play();
             keyIcon.enabled = false;
+            keyIcon.transform.SetParent(GameObject.Find("Canvas").transform);
         }
     }
 }

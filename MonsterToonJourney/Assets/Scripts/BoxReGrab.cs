@@ -10,6 +10,7 @@ public class BoxReGrab : MonoBehaviour
     private PlayerMove pm;
     public GameObject spikeTrap;
     public GameObject box;
+    private GameObject fm;
     public bool canInteract;
     private Image boxIcon;
     public Scene currentScene;
@@ -25,6 +26,7 @@ public class BoxReGrab : MonoBehaviour
         {
             pm = GameObject.Find("Player").GetComponent<PlayerMove>();
             boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
+            fm = GameObject.Find("Fear Meter");
         }
     }
 
@@ -33,12 +35,13 @@ public class BoxReGrab : MonoBehaviour
     {
         if (!gm.isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox)
+            if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox && !gm.isPaused)
             {
                 pm.hasBox = true;
                 spikeTrap.GetComponent<SpikeTrap>().hasBox = false;
                 box.GetComponent<BoxLaunch>().BoxReset();
                 boxIcon.enabled = true;
+                boxIcon.transform.SetParent(fm.transform);
                 pm.Audio.clip = pm.boxGrab;
                 pm.Audio.Play();
             }

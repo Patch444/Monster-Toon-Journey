@@ -33,6 +33,7 @@ public class SpikeTrap : MonoBehaviour
 
     public GameObject box;
     public GameObject spikes;
+    private GameObject fm;
     private PlayerMove pm;
     private BoxLaunch boxLaunch;
     public Vector3 spikeStart;
@@ -54,6 +55,7 @@ public class SpikeTrap : MonoBehaviour
         {
             pm = GameObject.Find("Player").GetComponent<PlayerMove>();
             boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
+            fm = GameObject.Find("Fear Meter");
         }
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         StartTimer();
@@ -83,6 +85,7 @@ public class SpikeTrap : MonoBehaviour
                 pm.hasBox = false;
                 hasBox = true;
                 boxIcon.enabled = false;
+                boxIcon.transform.SetParent(GameObject.Find("Canvas").transform);
                 box.SetActive(true);
                 Audio.clip = BoxPlace;
                 Audio.Play();

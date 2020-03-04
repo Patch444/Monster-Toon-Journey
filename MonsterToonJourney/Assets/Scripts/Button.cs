@@ -11,6 +11,7 @@ public class Button : MonoBehaviour
 
     public List<GameObject> counterparts;
     public GameObject box;
+    private GameObject fm;
     public List<SpikeTrap> sts;
     public List<ArrowSpawn> aSpawns;
 
@@ -46,6 +47,7 @@ public class Button : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
+        fm = GameObject.Find("Fear Meter");
         Audio = GetComponent<AudioSource>();
 
         if (isSpikes)
@@ -75,6 +77,7 @@ public class Button : MonoBehaviour
                 pm.hasBox = false;
                 hasBox = true;
                 boxIcon.enabled = false;
+                boxIcon.transform.SetParent(GameObject.Find("Canvas").transform);
                 box.SetActive(true);
                 Audio.clip = BoxPlace;
                 Audio.Play();
@@ -87,6 +90,7 @@ public class Button : MonoBehaviour
                 pm.hasBox = true;
                 hasBox = false;
                 boxIcon.enabled = true;
+                boxIcon.transform.SetParent(fm.transform);
                 box.SetActive(false);
                 pm.Audio.clip = pm.boxGrab;
                 pm.Audio.Play();
