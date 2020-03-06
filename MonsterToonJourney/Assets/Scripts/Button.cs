@@ -14,7 +14,9 @@ public class Button : MonoBehaviour
     private GameObject fm;
     public List<SpikeTrap> sts;
     public List<ArrowSpawn> aSpawns;
+    public List<Portcullis> ports;
 
+    public Animator anim;
 
     public int counterpartCount;
 
@@ -48,6 +50,8 @@ public class Button : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         fm = GameObject.Find("Fear Meter");
+        anim = this.GetComponent<Animator>();
+
         Audio = GetComponent<AudioSource>();
 
         if (isSpikes)
@@ -60,6 +64,11 @@ public class Button : MonoBehaviour
             foreach (GameObject spawn in counterparts)
                 aSpawns.Add(spawn.GetComponent<ArrowSpawn>());
         }
+        if (isPortcullis)
+        {
+            foreach (GameObject port in counterparts)
+                ports.Add(port.GetComponent<Portcullis>());
+        }
 
     }
     // Update is called once per frame
@@ -69,7 +78,7 @@ public class Button : MonoBehaviour
         {
             //Add the box's rotation and position constraints back
             EnableBox();
-
+            anim.enabled = true;
 
             //Player places the box
             if (Input.GetKeyDown(KeyCode.E) && canInteract && pm.hasBox && !hasBox)
@@ -115,9 +124,9 @@ public class Button : MonoBehaviour
                     }
                     if (isPortcullis)
                     {
-                        foreach (GameObject portcullis in counterparts)
-                            // Will eventually play rising animation
-                            portcullis.SetActive(true);
+                        foreach (Portcullis port in ports)
+
+                            port.Fall();
                     }
                     if (isPlatform)
                     {
@@ -139,9 +148,9 @@ public class Button : MonoBehaviour
                     }
                     if (isPortcullis)
                     {
-                        foreach (GameObject portcullis in counterparts)
+                        foreach (Portcullis port in ports)
                             // Will eventually play closing animation
-                            portcullis.SetActive(false);
+                            port.Rise();
                     }
                     if (isPlatform)
                     {
@@ -166,9 +175,8 @@ public class Button : MonoBehaviour
                     }
                     if (isPortcullis)
                     {
-                        foreach (GameObject portcullis in counterparts)
-                            // Will eventually play closing animation
-                            portcullis.SetActive(false);
+                        foreach (Portcullis port in ports)
+                            port.Rise();
                     }
                     if (isPlatform)
                     {
@@ -190,9 +198,8 @@ public class Button : MonoBehaviour
                     }
                     if (isPortcullis)
                     {
-                        foreach (GameObject portcullis in counterparts)
-                            // Will eventually play rising animation
-                            portcullis.SetActive(true);
+                        foreach (Portcullis port in ports)
+                            port.Fall();
                     }
                     if (isPlatform)
                     {
@@ -201,6 +208,10 @@ public class Button : MonoBehaviour
                     }
                 }
             }
+        }
+        else
+        {
+            anim.enabled = false;
         }
     }
     public void EnableBox()
@@ -219,6 +230,7 @@ public class Button : MonoBehaviour
         {
             canInteract = true;
             isPressed = true;
+            anim.Play("Button_Press");
             if (!hasBox)
             {
                 Audio.clip = ButtonDown;
@@ -236,6 +248,7 @@ public class Button : MonoBehaviour
             if (!hasBox)
             {
                 Audio.clip = ButtonUp;
+                anim.Play("Button_Release");
                 Audio.Play();
             }
         }
