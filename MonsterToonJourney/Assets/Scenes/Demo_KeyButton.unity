@@ -72932,7 +72932,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 4}
+  m_Size: {x: 1, y: 4}
   m_EdgeRadius: 0
 --- !u!1 &916940341
 GameObject:
@@ -123928,6 +123928,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704584608245234009, guid: ad299ed28eacbe840a1214779924a24c,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 106887285
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704584608245234009, guid: ad299ed28eacbe840a1214779924a24c,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6704584608245234009, guid: ad299ed28eacbe840a1214779924a24c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad299ed28eacbe840a1214779924a24c, type: 3}
