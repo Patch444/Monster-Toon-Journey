@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
     public bool hasUnpaused;
     public bool hasUsedSlime;
+    public bool isInFinal;
+    public bool isBossLevel;
     public GameObject pauseMenu;
     public int lives = 4;
     public Sprite[] fearSprites = new Sprite[5];
@@ -16,9 +18,10 @@ public class GameManager : MonoBehaviour
     public string currentLevel = "Level 1";
     public SpriteRenderer playerSR;
 
+    public Text countdownTxt;
+
     public PlayerShieldSlime pSS;
 
-    public bool isInFinal;
 
     public float flickerDuration;
 
@@ -77,6 +80,12 @@ public class GameManager : MonoBehaviour
         else
         {
             isInFinal = false;
+        }
+
+        if (isBossLevel == false)
+        {
+            countdownTxt = GameObject.Find("Countdown Text").GetComponent<Text>();
+            countdownTxt.text = null;
         }
     }
 
@@ -229,6 +238,12 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        // Checks if the player is on the BlanketArrow test level.
+        if (currentLevel == "Demo_BlanketArrows")
+        {
+            // Loads the Slimes test game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_BATest");
+        }
         // Checks if the player is on the Slimes test level.
         if (currentLevel == "Demo_Slimes")
         {

@@ -335,7 +335,7 @@ Transform:
   m_LocalScale: {x: 0.2944989, y: 0.2944989, z: 0.2944989}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &63856821
 GameObject:
@@ -435,6 +435,8 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   hasUsedSlime: 0
+  isInFinal: 0
+  isBossLevel: 1
   pauseMenu: {fileID: 0}
   lives: 4
   fearSprites:
@@ -444,10 +446,10 @@ MonoBehaviour:
   - {fileID: -2525589975552665303, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   - {fileID: 2629853271587101444, guid: c14b25deefa421e4cb82ce97e8965bbc, type: 3}
   player: {fileID: 0}
-  currentLevel: Demo_KeyButton
+  currentLevel: Demo_BlanketArrows
   playerSR: {fileID: 0}
+  countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
-  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -606,7 +608,7 @@ Transform:
   m_LocalScale: {x: 0.2944989, y: 0.2944989, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &174502443
 GameObject:
@@ -7078,7 +7080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &462650060
 GameObject:
@@ -53385,7 +53387,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &997076845
 GameObject:
@@ -53801,6 +53803,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150940436}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1161964041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1161964043}
+  - component: {fileID: 1161964042}
+  m_Layer: 2
+  m_Name: BossLevel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1161964042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161964041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fb8b348493c0a44bafc3184363d7f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossTimer: 30
+  countdownTxt: {fileID: 0}
+--- !u!4 &1161964043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161964041}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.65, y: 2.42, z: 0}
+  m_LocalScale: {x: 0.2944989, y: 0.2944989, z: 0.2944989}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1169835883
 GameObject:
   m_ObjectHideFlags: 0
@@ -59915,7 +59962,7 @@ Transform:
   - {fileID: 1993493413}
   - {fileID: 1169835884}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1832046877
 GameObject:
@@ -60043,7 +60090,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1851245910
 PrefabInstance:
@@ -60738,7 +60785,7 @@ Transform:
   m_LocalScale: {x: 0.2944989, y: 0.2944989, z: 0.2944989}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2016166762
 GameObject:
@@ -98389,7 +98436,7 @@ PrefabInstance:
     - target: {fileID: 2806153119465324334, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2806153119465324334, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
         type: 3}

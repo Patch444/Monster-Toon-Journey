@@ -56,6 +56,12 @@ public class SceneManager : MonoBehaviour
 
     }
 
+    // Transitions player to the Blanket Arrow Test Level.
+    public void ToBlanketArrows()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Demo_BlanketArrows");
+    }
+
     // Transitions player to the Slimes Test Level.
     public void ToSlimes()
     {
@@ -167,6 +173,12 @@ public class SceneManager : MonoBehaviour
     // Lets the player try the previous level again.
     public void TryAgain()
     {
+        // Checks if the player was on the BlanketArrow test level.
+        if (currentLevel == "Demo_BlanketArrows")
+        {
+            // Loads Slimes test level.
+            ToBlanketArrows();
+        }
         // Checks if the player was on the Slime test level.
         if (currentLevel == "Demo_Slimes")
         {
