@@ -572,12 +572,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   groundCheck: {fileID: 9025915812974430471}
-  groundCheckSize: {x: 0.33, y: 0.4, z: 0}
+  groundCheckSize: {x: 0.33, y: 0.45, z: 0}
   walkSpeed: 5
   jumpHeight: 7.5
   glideFactor: 0.075
   maximumDrag: 25
   spawnPosition: {x: 0, y: 0, z: 0}
+  rigidbody: {x: 0, y: 0, z: 0}
   moveDirection: 0
   lastDirection: 0
   qPress: 0
@@ -599,6 +600,7 @@ MonoBehaviour:
   justLanded: 0
   canJump: 0
   canWalk: 0
+  immune: 0
   canGlide: 0
   hasBox: 0
   hasShield: 0
@@ -609,6 +611,7 @@ MonoBehaviour:
   isSwinging: 0
   isByDoor: 0
   hasGlided: 0
+  isGliding: 0
   hasShieldSlime: 0
   shieldIcon: {fileID: 0}
   boxGrab: {fileID: 8300000, guid: 5d552c11315234c4bacd775a5f7959e1, type: 3}

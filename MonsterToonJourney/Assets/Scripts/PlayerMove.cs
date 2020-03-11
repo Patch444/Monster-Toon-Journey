@@ -30,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     private SpriteRenderer sprite;
 
     public Vector3 spawnPosition;
+    public Vector3 rigidbody;
     //public Vector3 releasePosition;
 
     Rigidbody2D playerBody;
@@ -160,7 +161,7 @@ public class PlayerMove : MonoBehaviour
             if (GetComponent<Rigidbody2D>().constraints == RigidbodyConstraints2D.FreezeAll)
             {
                 GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
-
+                GetComponent<Rigidbody2D>().velocity = rigidbody;
             }
 
             Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
@@ -221,6 +222,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
+            rigidbody = GetComponent<Rigidbody2D>().velocity;
             GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             anim.enabled = false;
             AudioListener.pause = true;
