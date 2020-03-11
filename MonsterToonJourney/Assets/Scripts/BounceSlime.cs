@@ -11,6 +11,11 @@ public class BounceSlime : MonoBehaviour
     public int moveDirection;
     public int lastMoveDirection;
     public GameManager gm;
+
+    public AudioClip moveLoop;
+    public AudioClip bounce;
+
+    private AudioSource Audio;
     
 
     public PlayerMove pm;
@@ -21,6 +26,7 @@ public class BounceSlime : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAnim = GameObject.Find("Player").GetComponent<Animator>();
+        Audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -59,6 +65,10 @@ public class BounceSlime : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            Audio.Pause();
+            Audio.clip = bounce;
+            Audio.loop = false;
+            Audio.Play();
             moveDirection = 0;
             anim.Play("Slime_Bounce_Jumped");
             other.attachedRigidbody.AddForce(Vector2.up * bounceHeight, ForceMode2D.Impulse);
@@ -78,6 +88,10 @@ public class BounceSlime : MonoBehaviour
     {
         
         yield return new WaitForSecondsRealtime(.64f);
+        Audio.Pause();
+        Audio.clip = moveLoop;
+        Audio.loop = true;
+        Audio.Play();
         moveDirection = lastMoveDirection;
     }
 
