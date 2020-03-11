@@ -20,6 +20,7 @@ public class SceneManager : MonoBehaviour
     public GameObject levelFourBtn;
     public GameObject levelFiveBtn;
     public GameObject levelSixBtn;
+    public GameObject levelSevenBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
     public Scene currentScene;
@@ -42,6 +43,7 @@ public class SceneManager : MonoBehaviour
             levelFourBtn.SetActive(false);
             levelFiveBtn.SetActive(false);
             levelSixBtn.SetActive(false);
+            levelSevenBtn.SetActive(false);
         }
     }
 
@@ -120,6 +122,12 @@ public class SceneManager : MonoBehaviour
     public void ToLevelSix()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Demo_Shield");
+    }
+
+    // Transitions the player to the seventh level.
+    public void ToLevelSeven()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_7");
     }
 
     // Transitions the player to the game over screen for the first level.
@@ -232,6 +240,13 @@ public class SceneManager : MonoBehaviour
             // Loads the shield demo level.
             ToLevelSix();
         }
+
+        // Checks if the player was on level seven.
+        if (currentLevel == "Level_7")
+        {
+            // Loads the seventh level.
+            ToLevelSeven();
+        }
     }
 
     // Unlocks levels based on how far the player has gotten in the game.
@@ -256,6 +271,10 @@ public class SceneManager : MonoBehaviour
         if (globalManager.howFar >= 6)
         {
             levelSixBtn.SetActive(true);
+        }
+        if (globalManager.howFar >= 7)
+        {
+            levelSevenBtn.SetActive(true);
         }
     }
 

@@ -299,6 +299,13 @@ public class GameManager : MonoBehaviour
             // Loads the game over screen.
             UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L6");
         }
+
+        // Checks if the player is on the seventh level.
+        if (currentLevel == "Level 7")
+        {
+            // Loads the game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L7");
+        }
     }
 
     public void AdvanceLevel()
