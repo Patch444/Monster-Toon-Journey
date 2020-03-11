@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if (currentLevel == "Shield Demo")
+        if (currentLevel == "Level 7")
         {
             isInFinal = true;
         }
@@ -345,8 +345,14 @@ public class GameManager : MonoBehaviour
                     globalManager.howFar = 7;
                 }
                 break;
+            case "Level 7":
+                if (globalManager.howFar < 8)
+                {
+                    globalManager.howFar = 8;
+                }
+                break;
         }
-        if (globalManager.howFar == 7 && isInFinal == true)
+        if (globalManager.howFar == 8 && isInFinal == true)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         }
