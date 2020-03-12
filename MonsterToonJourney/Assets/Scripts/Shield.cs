@@ -16,7 +16,7 @@ public class Shield : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         fm = GameObject.Find("Fear Meter");
-        shieldIcon = GameObject.Find("Shield Icon").GetComponent<Image>();
+        shieldIcon = GameObject.Find("ShieldIcon").GetComponent<Image>();
         shieldIcon.enabled = false;
     }
     public void OnTriggerEnter2D(Collider2D other)

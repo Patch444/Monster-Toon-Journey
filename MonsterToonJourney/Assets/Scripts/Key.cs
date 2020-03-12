@@ -26,7 +26,7 @@ public class Key : MonoBehaviour
         if (!gm.isPaused)
         {
             //if the player presses E in range set their hasBox and destroy self
-            if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasShield)
+            if (Input.GetKeyDown(KeyCode.E) && canInteract)
             {
                 //Debug.Log("Player picked up a shield");
                 pm.hasKey = true;
