@@ -21,6 +21,7 @@ public class SceneManager : MonoBehaviour
     public GameObject levelFiveBtn;
     public GameObject levelSixBtn;
     public GameObject levelSevenBtn;
+    public GameObject levelEightBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
     public Scene currentScene;
@@ -130,6 +131,13 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level_7");
     }
 
+    // Transitions the player to the eighth level.
+    public void ToLevelEight()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_8");
+    }
+
+    /*
     // Transitions the player to the game over screen for the first level.
     public void ToGameOverOne()
     {
@@ -165,7 +173,7 @@ public class SceneManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("GO_6");
     }
-
+    */
     // Transitions the player to the win screen.
     public void ToWin()
     {
@@ -247,6 +255,13 @@ public class SceneManager : MonoBehaviour
             // Loads the seventh level.
             ToLevelSeven();
         }
+
+        // Checks if the player was on level eight.
+        if (currentLevel == "Level_8")
+        {
+            // Loads the eighth level.
+            ToLevelEight();
+        }
     }
 
     // Unlocks levels based on how far the player has gotten in the game.
@@ -276,6 +291,11 @@ public class SceneManager : MonoBehaviour
         {
             levelSevenBtn.SetActive(true);
         }
+        if (globalManager.howFar >= 8)
+        {
+            levelEightBtn.SetActive(true);
+        }
+
     }
 
     // Exits the application.

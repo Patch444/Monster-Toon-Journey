@@ -74,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if (currentLevel == "Level 7")
+        if (currentLevel == "Level 8")
         {
             isInFinal = true;
         }
@@ -306,6 +306,13 @@ public class GameManager : MonoBehaviour
             // Loads the game over screen.
             UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L7");
         }
+
+        // Checks if the player is on the eighth level.
+        if (currentLevel == "Level 8")
+        {
+            // Loads the game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L8");
+        }
     }
 
     public void AdvanceLevel()
@@ -358,8 +365,14 @@ public class GameManager : MonoBehaviour
                     globalManager.howFar = 8;
                 }
                 break;
+            case "Level 8":
+                if (globalManager.howFar < 9)
+                {
+                    globalManager.howFar = 9;
+                }
+                break;
         }
-        if (globalManager.howFar == 8 && isInFinal == true)
+        if (globalManager.howFar == 9 && isInFinal == true)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         }
