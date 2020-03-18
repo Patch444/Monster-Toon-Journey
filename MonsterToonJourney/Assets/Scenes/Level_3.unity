@@ -20347,6 +20347,8 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   hasUsedSlime: 0
+  isInFinal: 0
+  isBossLevel: 0
   pauseMenu: {fileID: 0}
   lives: 4
   fearSprites:
@@ -20358,8 +20360,8 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 3
   playerSR: {fileID: 0}
+  countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
-  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -34451,6 +34453,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevelSelect
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a, type: 3}
 --- !u!4 &762118454 stripped
@@ -34872,15 +34894,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: isActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: isActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285978, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}

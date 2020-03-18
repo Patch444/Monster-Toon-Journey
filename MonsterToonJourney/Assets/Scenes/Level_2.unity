@@ -20286,6 +20286,8 @@ MonoBehaviour:
   isPaused: 0
   hasUnpaused: 0
   hasUsedSlime: 0
+  isInFinal: 0
+  isBossLevel: 0
   pauseMenu: {fileID: 0}
   lives: 4
   fearSprites:
@@ -20297,8 +20299,8 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 2
   playerSR: {fileID: 0}
+  countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
-  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -21900,6 +21902,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: hasBox
@@ -21930,16 +21947,6 @@ PrefabInstance:
       propertyPath: isActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
     - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: MinDistance
@@ -21950,20 +21957,15 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213159486285976, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7108213159486285977, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -22888,6 +22890,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: isActive
@@ -22902,16 +22914,6 @@ PrefabInstance:
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -22987,16 +22989,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: isActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: m_TagString
@@ -23006,6 +22998,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5189180398401443503, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -28877,6 +28879,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7108213160378222130, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
       propertyPath: isActive
@@ -28896,16 +28908,6 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_TagString
-      value: Ground
-      objectReference: {fileID: 0}
-    - target: {fileID: 7108213160400060849, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2838105533324274455, guid: 41d9cd866499f4d8e99d5b6b0aa7824f,
         type: 3}
@@ -29559,6 +29561,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevelSelect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a, type: 3}

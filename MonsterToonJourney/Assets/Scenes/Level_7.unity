@@ -20996,6 +20996,26 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644686010646, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 167543816}
+    - target: {fileID: 6550001644151722854, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevelSelect
+      objectReference: {fileID: 0}
     - target: {fileID: 2806153118017779747, guid: 64af4c3abe41fcd4880cb4f1bc75ec4a,
         type: 3}
       propertyPath: m_Name
@@ -83467,6 +83487,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MimicWall
       objectReference: {fileID: 0}
+    - target: {fileID: 8493054136711496786, guid: 26abe8fa91985bd49b2f134c8523ff65,
+        type: 3}
+      propertyPath: wallSounds
+      value: 
+      objectReference: {fileID: 1553002750}
     - target: {fileID: 8493054136711496796, guid: 26abe8fa91985bd49b2f134c8523ff65,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -83522,11 +83547,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8493054136711496786, guid: 26abe8fa91985bd49b2f134c8523ff65,
-        type: 3}
-      propertyPath: wallSounds
-      value: 
-      objectReference: {fileID: 1553002750}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 26abe8fa91985bd49b2f134c8523ff65, type: 3}
 --- !u!1001 &1872201691

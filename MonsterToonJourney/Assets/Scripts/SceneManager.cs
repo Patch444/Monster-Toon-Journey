@@ -45,6 +45,7 @@ public class SceneManager : MonoBehaviour
             levelFiveBtn.SetActive(false);
             levelSixBtn.SetActive(false);
             levelSevenBtn.SetActive(false);
+            levelEightBtn.SetActive(false);
         }
     }
 
