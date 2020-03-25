@@ -12,6 +12,9 @@ public class Button : MonoBehaviour
     public List<GameObject> counterparts;
     public GameObject box;
     private GameObject fm;
+
+    public BoxCollider2D regrabCollider;
+
     public List<SpikeTrap> sts;
     public List<ArrowSpawn> aSpawns;
     public List<Portcullis> ports;
@@ -51,6 +54,7 @@ public class Button : MonoBehaviour
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         fm = GameObject.Find("Fear Meter");
         anim = this.GetComponent<Animator>();
+        regrabCollider.enabled = false;
 
         Audio = GetComponent<AudioSource>();
 
@@ -79,6 +83,7 @@ public class Button : MonoBehaviour
             //Add the box's rotation and position constraints back
             EnableBox();
             anim.enabled = true;
+            
 
             //Player places the box
             if (Input.GetKeyDown(KeyCode.E) && canInteract && pm.hasBox && !hasBox)
@@ -88,6 +93,7 @@ public class Button : MonoBehaviour
                 boxIcon.enabled = false;
                 boxIcon.transform.SetParent(GameObject.Find("Canvas").transform);
                 box.SetActive(true);
+                regrabCollider.enabled = true;
                 Audio.clip = BoxPlace;
                 Audio.Play();
             }
@@ -102,6 +108,7 @@ public class Button : MonoBehaviour
                 boxIcon.transform.SetParent(fm.transform);
                 box.SetActive(false);
                 pm.Audio.clip = pm.boxGrab;
+                regrabCollider.enabled = false;
                 pm.Audio.Play();
             }
             
@@ -223,7 +230,18 @@ public class Button : MonoBehaviour
             boxConstrained = true;
         }
     }
+
     public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+            if (!hasBox)
+            {
+                Audio.clip = ButtonDown;
+                Audio.Play();
+            }
+    }
+
+    public void OnTriggerStay2D(Collider2D other)
     {
         //when player comes near allow pickup
         if (other.tag == "Player")
@@ -231,11 +249,6 @@ public class Button : MonoBehaviour
             canInteract = true;
             isPressed = true;
             anim.Play("Button_Press");
-            if (!hasBox)
-            {
-                Audio.clip = ButtonDown;
-                Audio.Play();
-            }
         }
     }
     public void OnTriggerExit2D(Collider2D other)
