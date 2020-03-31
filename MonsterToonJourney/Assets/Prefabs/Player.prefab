@@ -421,7 +421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025915812974430471}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.78, z: 0}
+  m_LocalPosition: {x: 0, y: -0.811, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 152878528006205360}
@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: -946118379632196258}
   - component: {fileID: 5483628303372777972}
   - component: {fileID: 751753762589190271}
+  - component: {fileID: 2252421996311979722}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
   groundCheck: {fileID: 9025915812974430471}
-  groundCheckSize: {x: 0.33, y: 0.45, z: 0}
+  groundCheckSize: 0.3
   walkSpeed: 5
   jumpHeight: 7.5
   glideFactor: 0.075
@@ -599,20 +600,20 @@ MonoBehaviour:
   isAirborne: 0
   justLanded: 0
   canJump: 0
+  canGlide: 0
+  hasGlided: 0
+  isGliding: 0
   canWalk: 0
   immune: 0
-  canGlide: 0
-  hasBox: 0
   hasShield: 0
   isShielding: 0
+  hasShieldSlime: 0
+  hasBox: 0
   hasKey: 0
   isDead: 0
   beenHit: 0
   isSwinging: 0
   isByDoor: 0
-  hasGlided: 0
-  isGliding: 0
-  hasShieldSlime: 0
   shieldIcon: {fileID: 0}
   boxGrab: {fileID: 8300000, guid: 5d552c11315234c4bacd775a5f7959e1, type: 3}
   ShieldUp: {fileID: 8300000, guid: 8d5d643a3576b41f589a8fc596246115, type: 3}
@@ -780,3 +781,29 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025915813441279521}
   m_Enabled: 1
+--- !u!61 &2252421996311979722
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9025915813441279521}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.9764302}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0.125, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.10713959}
+  m_EdgeRadius: 0

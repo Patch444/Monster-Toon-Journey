@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField]
     GameObject groundCheck;
     [SerializeField]
-    Vector3 groundCheckSize;
+    float groundCheckSize;
 
     [SerializeField]
     float walkSpeed;
@@ -60,23 +60,30 @@ public class PlayerMove : MonoBehaviour
     public bool isAirborne;
     public bool justLanded;
     public bool canJump;
-    public bool canWalk;
-    bool isWalking;
-    public bool immune;
 
     public bool canGlide;
     bool hasPlayedGlide;
-    public bool hasBox;
+    public bool hasGlided;
+    public bool isGliding;
+
+    public bool canWalk;
+    bool isWalking;
+
+    public bool immune;
     public bool hasShield;
     public bool isShielding;
+    public bool hasShieldSlime;
+
+    public bool hasBox;
     public bool hasKey;
+
     public bool isDead;
     public bool beenHit;
     public bool isSwinging;
+
     public bool isByDoor;
-    public bool hasGlided;
-    public bool isGliding;
-    public bool hasShieldSlime;
+    
+    
 
     public Image shieldIcon;
 
@@ -164,7 +171,7 @@ public class PlayerMove : MonoBehaviour
                 GetComponent<Rigidbody2D>().velocity = rigidbody;
             }
 
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
             if (colliders != null)
             {
                 int count = 0;
@@ -332,6 +339,18 @@ public class PlayerMove : MonoBehaviour
             shieldDelay = 1;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
         //Check to see if the collision enter is the ground
@@ -342,7 +361,7 @@ public class PlayerMove : MonoBehaviour
             //RaycastHit2D hitRight = Physics2D.Raycast(transform.position+Vector3.right*0.34f, -transform.right*0.34f-this.transform.up, 1f, LayerMask.GetMask("Ground"));
 
             //Debug.DrawLine(transform.position, Vector2.down * 1f + (Vector2)transform.position, Color.cyan);
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
             if (colliders != null)
             {
                 for (int i = 0; i < colliders.Length; i++)
@@ -374,7 +393,8 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             bool isLanding = false;
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            //Debug.Log(colliders == null);
             if (colliders != null)
             {
                 foreach (Collider2D collider in colliders)
@@ -387,6 +407,7 @@ public class PlayerMove : MonoBehaviour
                     }
                 }
             }
+            //Debug.Log("Goblin is landing: " + isLanding);
             if (isAirborne && isLanding)
             {
                 if (lastDirection == 1 && hasPlayedGlide == false)
@@ -405,13 +426,13 @@ public class PlayerMove : MonoBehaviour
                     //Debug.Log("land left");
                     //canWalk = true;
                 }
-                if (lastDirection == 1 && hasPlayedGlide == true)
+                else if (lastDirection == 1 && hasPlayedGlide == true)
                 {
                     canWalk = false;
                     justLanded = true;
                     anim.Play("Parachute Close_Right");
                 }
-                if (lastDirection == -1 && hasPlayedGlide == true)
+                else if (lastDirection == -1 && hasPlayedGlide == true)
                 {
                     canWalk = false;
                     justLanded = true;
@@ -428,14 +449,15 @@ public class PlayerMove : MonoBehaviour
         Gizmos.color = Color.red;
         //Check that it is being run in Play Mode, so it doesn't try to draw this in Editor mode
         //Draw a cube where the OverlapBox is (positioned where your GameObject is as well as a size)
-        Gizmos.DrawWireCube(groundCheck.transform.position, groundCheckSize);
+        UnityEditor.Handles.color = Color.yellow;
+        UnityEditor.Handles.DrawWireDisc(groundCheck.transform.position, Vector3.forward, groundCheckSize);
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Check to see if the collision exit is the ground
         if (collision.gameObject.tag == "Ground")
         {
-            Collider2D[] colliders = Physics2D.OverlapBoxAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
             if (colliders != null)
             {
                 int count = 0;
