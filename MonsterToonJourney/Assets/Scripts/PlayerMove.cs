@@ -339,18 +339,7 @@ public class PlayerMove : MonoBehaviour
             shieldDelay = 1;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-    }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        
-    }
+    
     private void OnCollisionStay2D(Collision2D collision)
     {
         //Check to see if the collision enter is the ground
@@ -362,12 +351,16 @@ public class PlayerMove : MonoBehaviour
 
             //Debug.DrawLine(transform.position, Vector2.down * 1f + (Vector2)transform.position, Color.cyan);
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
+            Debug.Log(colliders.Length);
             if (colliders != null)
             {
                 for (int i = 0; i < colliders.Length; i++)
                 {
+                    Debug.Log(colliders[i].tag);
                     if (colliders[i].tag == "Ground")
                     {
+                        Debug.Log("Staying in collision");
+
                         isAirborne = false;
                         canJump = true;
                         canWalk = true;
@@ -394,20 +387,21 @@ public class PlayerMove : MonoBehaviour
         {
             bool isLanding = false;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
-            //Debug.Log(colliders == null);
+            Debug.Log("No colliders: " + colliders == null);
             if (colliders != null)
             {
                 foreach (Collider2D collider in colliders)
                 {
                     if (collider.tag == "Ground")
                     {
+                        Debug.Log("Hit Ground");
                         isLanding = true;
                         hasGlided = false;
                         break;
                     }
                 }
             }
-            //Debug.Log("Goblin is landing: " + isLanding);
+            Debug.Log("Goblin is landing: " + isLanding);
             if (isAirborne && isLanding)
             {
                 if (lastDirection == 1 && hasPlayedGlide == false)
@@ -441,6 +435,7 @@ public class PlayerMove : MonoBehaviour
                 PlayLandingSound();
                 Invoke("FinishLanding", 0.25f);
                 hasPlayedGlide = false;
+                isAirborne = false;
             }
         }
     }
