@@ -44,10 +44,10 @@ public class Blanket : MonoBehaviour
         if (!gm.isPaused)
         {
             //if the player presses E in range set their hasBox and destroy self
-            //if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBlanket)
+            if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBlanket)
             {
                 //Debug.Log("Player picked up a shield");
-                //pm.hasBlanket = true;
+                pm.hasBlanket = true;
                 // pm.Audio.clip = pm.blanketGrab;
                 // pm.Audio.Play();
                 blanketIcon.enabled = true;

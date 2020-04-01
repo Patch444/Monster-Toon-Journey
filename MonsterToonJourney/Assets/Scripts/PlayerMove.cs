@@ -61,7 +61,7 @@ public class PlayerMove : MonoBehaviour
     public bool justLanded;
     public bool canJump;
 
-
+    public bool hasBlanket;
     public bool canGlide;
     bool hasPlayedGlide;
     public bool hasGlided;
@@ -114,6 +114,7 @@ public class PlayerMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hasBlanket = false;
         immune = false;
         //arrowCount = 0;
         // Assigns animator.
@@ -202,7 +203,7 @@ public class PlayerMove : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                     Jump();
             }
-            if (canGlide)
+            if (canGlide && hasBlanket == true)
             {
                 Glide();
             }
@@ -421,13 +422,13 @@ public class PlayerMove : MonoBehaviour
                     //Debug.Log("land left");
                     //canWalk = true;
                 }
-                else if (lastDirection == 1 && hasPlayedGlide == true)
+                else if (lastDirection == 1 && hasPlayedGlide == true && hasBlanket == true)
                 {
                     canWalk = false;
                     justLanded = true;
                     anim.Play("Parachute Close_Right");
                 }
-                else if (lastDirection == -1 && hasPlayedGlide == true)
+                else if (lastDirection == -1 && hasPlayedGlide == true && hasBlanket == true)
                 {
                     canWalk = false;
                     justLanded = true;
@@ -481,13 +482,13 @@ public class PlayerMove : MonoBehaviour
                         anim.Play("Monster Jump_Left");
                     }
 
-                    if (lastDirection == 1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false)
+                    if (lastDirection == 1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false && hasBlanket == true)
                     {
                         anim.Play("Parachute Open_Right");
 
                     }
 
-                    if (lastDirection == -1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false)
+                    if (lastDirection == -1 && Input.GetKeyDown(KeyCode.LeftShift) && isShielding == false && hasBlanket == true)
                     {
                         anim.Play("Parachute Open_Left");
                     }
@@ -578,16 +579,16 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Walk_Right");
                 }
-                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && !Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (!Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.LeftShift) && hasBlanket == false)) && hasGlided == false)
                 {
                     anim.Play("Monster Jump_Right");
                 }
-                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true) && hasGlided == false)
                 {
                     anim.Play("Parachute Open_Right");
                 }
 
-                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (Input.GetKeyUp(KeyCode.LeftShift) && hasBlanket == true) && hasGlided == true)
                 {
                     anim.Play("Parachute Close And Jump_Right");
                 }
@@ -633,15 +634,15 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Walk_Left");
                 }
-                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && !Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (!Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.LeftShift) && hasBlanket == false)) && hasGlided == false)
                 {
                     anim.Play("Monster Jump_Left");
                 }
-                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift) && hasGlided == false)
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true) && hasGlided == false)
                 {
                     anim.Play("Parachute Open_Left");
                 }
-                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKeyUp(KeyCode.LeftShift) && hasGlided == true)
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (Input.GetKeyUp(KeyCode.LeftShift) && hasBlanket == true) && hasGlided == true)
                 {
                     anim.Play("Parachute Close And Jump_Left");
                 }
@@ -677,24 +678,24 @@ public class PlayerMove : MonoBehaviour
         isAirborne = true;
         beforeJumpDirection = moveDirection;
         playerBody.AddForce(Vector2.up * jumpHeight, ForceMode2D.Impulse);
-        if (lastDirection == 1 && !Input.GetKey(KeyCode.LeftShift))
+        if (lastDirection == 1 && (!Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift) && hasBlanket == false))
         {
             //Debug.Log("Jump Right");
             anim.Play("Monster Jump_Right");
         }
-        if (lastDirection == -1 && !Input.GetKey(KeyCode.LeftShift))
+        if (lastDirection == -1 && (!Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift) && hasBlanket == false))
         {
             //Debug.Log("Jump Left");
             anim.Play("Monster Jump_Left");
         }
-        if (lastDirection == 1 && (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)))
+        if (lastDirection == 1 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Right");
             PlayGlideSound();
             hasGlided = true;
         }
-        if (lastDirection == -1 && (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)))
+        if (lastDirection == -1 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Left");
@@ -705,11 +706,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Glide()
     {
-        if (!isSwinging && isShielding == false)
+        if (!isSwinging && isShielding == false && hasBlanket == true)
         {
             //Hey Patrick is it working?
             float previousY = this.transform.position.y;
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Space)))
             {
                 if (lastDirection == 1)
                     anim.Play("Parachute Open_Right");
