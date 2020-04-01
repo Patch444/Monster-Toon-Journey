@@ -334,7 +334,7 @@ public class ArrowBehavior : MonoBehaviour
             // Spawns another arrow.
         }
         // Checks to see if the the arrow collided with an arrow stone.
-        if (collider.tag == "ArrowStone")
+        if (collider.tag == "ArrowStone" || collider.tag == "MovingPlatform")
         {
             hitArrowStone = true;
             Audio.clip = arrowHitSound;

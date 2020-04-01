@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3255754792062900931}
   - component: {fileID: 6559105244417831799}
   - component: {fileID: 2977233678821519294}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LargeBox
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -849,7 +849,7 @@ GameObject:
   - component: {fileID: 7108213160400060850}
   - component: {fileID: 7108213160400060851}
   - component: {fileID: 2838105533324274455}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Spike Box
   m_TagString: Ground
   m_Icon: {fileID: 0}

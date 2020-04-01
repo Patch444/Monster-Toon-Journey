@@ -11,9 +11,10 @@ public class Button : MonoBehaviour
 
     public List<GameObject> counterparts;
     public GameObject box;
+    public GameObject regrabCollider;
     private GameObject fm;
 
-    public BoxCollider2D regrabCollider;
+    //public BoxCollider2D regrabCollider;
 
     public List<SpikeTrap> sts;
     public List<ArrowSpawn> aSpawns;
@@ -54,7 +55,7 @@ public class Button : MonoBehaviour
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         fm = GameObject.Find("Fear Meter");
         anim = this.GetComponent<Animator>();
-        regrabCollider.enabled = false;
+        //regrabCollider.enabled = false;
 
         Audio = GetComponent<AudioSource>();
 
@@ -86,31 +87,7 @@ public class Button : MonoBehaviour
             
 
             //Player places the box
-            if (Input.GetKeyDown(KeyCode.E) && canInteract && pm.hasBox && !hasBox)
-            {
-                pm.hasBox = false;
-                hasBox = true;
-                boxIcon.enabled = false;
-                boxIcon.transform.SetParent(GameObject.Find("Canvas").transform);
-                box.SetActive(true);
-                regrabCollider.enabled = true;
-                Audio.clip = BoxPlace;
-                Audio.Play();
-            }
 
-            // Player picks up box
-            
-            else if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox && hasBox)
-            {
-                pm.hasBox = true;
-                hasBox = false;
-                boxIcon.enabled = true;
-                boxIcon.transform.SetParent(fm.transform);
-                box.SetActive(false);
-                pm.Audio.clip = pm.boxGrab;
-                regrabCollider.enabled = false;
-                pm.Audio.Play();
-            }
             
 // >>>>>>> Stashed changes
 

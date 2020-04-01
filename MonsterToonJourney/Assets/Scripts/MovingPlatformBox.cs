@@ -20,7 +20,7 @@ public class MovingPlatformBox : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         // Will change to "MovingPlatform" later.
-        if (other.tag == "Ground")
+        if (other.tag == "MovingPlatform")
         {
             if (isRightTopBox == true)
             {

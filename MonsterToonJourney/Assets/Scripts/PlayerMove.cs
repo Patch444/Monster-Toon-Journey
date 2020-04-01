@@ -61,6 +61,7 @@ public class PlayerMove : MonoBehaviour
     public bool justLanded;
     public bool canJump;
 
+
     public bool canGlide;
     bool hasPlayedGlide;
     public bool hasGlided;
@@ -177,7 +178,7 @@ public class PlayerMove : MonoBehaviour
                 int count = 0;
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].tag != "Ground")
+                    if (colliders[i].tag != "Ground" && colliders[i].tag != "MovingPlatform")
                     {
                         count++;
 
@@ -343,7 +344,7 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         //Check to see if the collision enter is the ground
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "MovingPlatform")
         {
             //RaycastHit2D hitCenter = Physics2D.Raycast(transform.position, -this.transform.up, 1f, LayerMask.GetMask("Ground"));
             //RaycastHit2D hitLeft = Physics2D.Raycast(transform.position +Vector3.left*0.34f, transform.right *0.34f-this.transform.up, 1f, LayerMask.GetMask("Ground"));
@@ -357,7 +358,7 @@ public class PlayerMove : MonoBehaviour
                 for (int i = 0; i < colliders.Length; i++)
                 {
                     Debug.Log(colliders[i].tag);
-                    if (colliders[i].tag == "Ground")
+                    if (colliders[i].tag == "Ground" || colliders[i].tag == "MovingPlatform")
                     {
                         Debug.Log("Staying in collision");
 
@@ -383,7 +384,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "MovingPlatform")
         {
             bool isLanding = false;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
@@ -392,7 +393,7 @@ public class PlayerMove : MonoBehaviour
             {
                 foreach (Collider2D collider in colliders)
                 {
-                    if (collider.tag == "Ground")
+                    if (collider.tag == "Ground" || collider.tag == "MovingPlatform")
                     {
                         Debug.Log("Hit Ground");
                         isLanding = true;
@@ -450,7 +451,7 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Check to see if the collision exit is the ground
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "MovingPlatform")
         {
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
             if (colliders != null)
@@ -458,7 +459,7 @@ public class PlayerMove : MonoBehaviour
                 int count = 0;
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if (colliders[i].tag != "Ground" || colliders[i].isTrigger)
+                    if (colliders[i].tag != "Ground" || colliders[i].isTrigger || colliders[i].tag == "MovingPlatform")
                     {
                         count++;
 
