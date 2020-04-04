@@ -42,7 +42,7 @@ public class Button : MonoBehaviour
     public AudioClip ButtonDown;
     public AudioClip ButtonUp;
 
-    private AudioSource Audio;
+    public AudioSource Audio;
 
     private Image boxIcon;
 

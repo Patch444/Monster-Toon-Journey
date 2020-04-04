@@ -61,6 +61,8 @@ public class ShieldSlime : MonoBehaviour
         if (other.tag == "Player" && other.GetComponent<PlayerMove>().hasShieldSlime == false && pm.beenHit == false)
         {
             pm.hasShieldSlime = true;
+            pm.Audio.clip = pm.shieldSlimeUp;
+            pm.Audio.Play();
             gameObject.GetComponent<SpriteRenderer>().enabled = false;
             gameObject.GetComponent<BoxCollider2D>().enabled = false;
             pSS.sourceSlime = this.gameObject;

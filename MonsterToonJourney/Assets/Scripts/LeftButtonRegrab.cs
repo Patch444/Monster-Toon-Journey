@@ -53,8 +53,8 @@ public class LeftButtonRegrab : MonoBehaviour
                 buttonScript.isPressed = true;
                 buttonAnim.Play("Button_Press");
                 //regrabCollider.SetActive(true);
-                //Audio.clip = BoxPlace;
-                //Audio.Play();
+                buttonScript.Audio.clip = buttonScript.ButtonDown;
+                buttonScript.Audio.Play();
             }
 
             // Player picks up box
@@ -69,6 +69,8 @@ public class LeftButtonRegrab : MonoBehaviour
                 pm.Audio.clip = pm.boxGrab;
                 //regrabCollider.SetActive(true);
                 pm.Audio.Play();
+                buttonScript.Audio.clip = buttonScript.ButtonUp;
+                buttonScript.Audio.Play();
                 buttonScript.isPressed = false;
                 buttonAnim.Play("Button_Release");
                 box.transform.position = boxStart;

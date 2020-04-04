@@ -9,9 +9,11 @@ public class SpikeTrap : MonoBehaviour
     GameManager gm;
     public bool canInteract;
     public float startTimer;
+    public float startLength = 3.0f;
     public float upTimer;
     public float downTimer;
     public float retractTimer;
+    public float retractLength = 1f;
     private float upSpeed = .12f;
     private float downSpeed = .12f;
 
@@ -98,7 +100,7 @@ public class SpikeTrap : MonoBehaviour
                 startTimer = startTimer + Time.deltaTime;
             }
             //Start spikes moving upward
-            if (startTimer >= 3.0f && hasGoneDown)
+            if (startTimer >= startLength && hasGoneDown)
             {
                 ActivateSpikes();
             }
@@ -129,7 +131,7 @@ public class SpikeTrap : MonoBehaviour
                 SoundPlayed = false;
             }
             //start moving down
-            if (retractTimer >= 1f && hasGoneUp)
+            if (retractTimer >= retractLength && hasGoneUp)
             {
                 retractTimer = 0f;
                 hasGoneUp = false;
@@ -283,5 +285,14 @@ public class SpikeTrap : MonoBehaviour
             Audio.Play();
             SoundPlayed = true;
         }
+    }
+    public void RemoveBox()
+    {
+        StartCoroutine(DelayTrapBox());
+    }
+    public IEnumerator DelayTrapBox()
+    {
+        yield return new WaitForSecondsRealtime(.2f);
+        hasBox = false;
     }
 }

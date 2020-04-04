@@ -600,6 +600,7 @@ MonoBehaviour:
   isAirborne: 0
   justLanded: 0
   canJump: 0
+  hasBlanket: 0
   canGlide: 0
   hasGlided: 0
   isGliding: 0
@@ -621,6 +622,8 @@ MonoBehaviour:
   ShieldGrab: {fileID: 8300000, guid: 0d2de4359e69546ab8c71020e48b1d2b, type: 3}
   keyGrab: {fileID: 8300000, guid: c4f6b4d00412d4eada435ec9df6432d6, type: 3}
   keyUse: {fileID: 8300000, guid: 277a7f06bc7244ee4b90a2ceb4c43cbc, type: 3}
+  shieldSlimeUp: {fileID: 8300000, guid: 21b00ff49fcb6461789aa497b7fcc25d, type: 3}
+  shieldSlimeDown: {fileID: 8300000, guid: 62c5f2d81777547f791394c76b00db66, type: 3}
   landingSounds:
   - {fileID: 8300000, guid: 0534d3e5e5d5844c4a5b41d4378d57b5, type: 3}
   - {fileID: 8300000, guid: d947ad2cf592b40b487eeb4d178a4a0c, type: 3}

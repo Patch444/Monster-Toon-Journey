@@ -38,7 +38,7 @@ public class BoxReGrab : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E) && canInteract && !pm.hasBox && !gm.isPaused)
             {
                 pm.hasBox = true;
-                spikeTrap.GetComponent<SpikeTrap>().hasBox = false;
+                spikeTrap.GetComponent<SpikeTrap>().RemoveBox();
                 box.GetComponent<BoxLaunch>().BoxReset();
                 boxIcon.enabled = true;
                 boxIcon.transform.SetParent(fm.transform);

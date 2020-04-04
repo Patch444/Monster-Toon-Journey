@@ -201,6 +201,8 @@ public class GameManager : MonoBehaviour
         if (player.hasShieldSlime == true)
         {
             pSS.Disperse();
+            player.Audio.clip = player.shieldSlimeDown;
+            player.Audio.Play();
             if (player.immune == false)
             {
                 player.immune = true;

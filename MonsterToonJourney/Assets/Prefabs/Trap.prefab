@@ -432,7 +432,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.5, y: 0.82}
+  m_Size: {x: 4.5, y: 0.82}
   m_EdgeRadius: 0
 --- !u!114 &2565829550675111254
 MonoBehaviour:
@@ -691,9 +691,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canInteract: 0
   startTimer: 0
+  startLength: 3
   upTimer: 0
   downTimer: 0
   retractTimer: 0
+  retractLength: 1
   hasBox: 0
   movingUp: 0
   movingDown: 0
@@ -750,7 +752,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
