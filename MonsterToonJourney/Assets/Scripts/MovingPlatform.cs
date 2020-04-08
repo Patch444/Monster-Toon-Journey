@@ -69,7 +69,7 @@ public class MovingPlatform : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" || other.transform.tag == "Slime")
         {
             other.transform.parent = transform;
         }
@@ -77,7 +77,7 @@ public class MovingPlatform : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" || other.transform.tag == "Slime")
         {
             other.transform.parent = grid.transform;
         }

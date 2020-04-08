@@ -12,6 +12,9 @@ public class BounceSlime : MonoBehaviour
     public int lastMoveDirection;
     public GameManager gm;
 
+    public bool isIdleSlime;
+    public bool playIdleJump;
+
     public AudioClip moveLoop;
     public AudioClip bounce;
 
@@ -35,7 +38,15 @@ public class BounceSlime : MonoBehaviour
         if (!gm.isPaused)
         {
             anim.enabled = true;
-            Move();
+            if (isIdleSlime == false)
+            {
+                Move();
+            }
+            if (isIdleSlime == true)
+            {
+                Idle();
+            }
+           
         }
         else
         {
@@ -61,17 +72,32 @@ public class BounceSlime : MonoBehaviour
 
     }
 
+    public void Idle()
+    {
+        if (playIdleJump == false)
+        {
+            anim.Play("Slime_Bounce_Idle");
+        }
+    }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && !gm.isPaused)
         {
             Audio.Pause();
             Audio.clip = bounce;
             Audio.loop = false;
             Audio.Play();
-            moveDirection = 0;
             anim.Play("Slime_Bounce_Jumped");
             other.attachedRigidbody.AddForce(Vector2.up * bounceHeight, ForceMode2D.Impulse);
+            if (isIdleSlime == false)
+            {
+                moveDirection = 0;
+            }
+            if (isIdleSlime == true)
+            {
+                playIdleJump = true;
+            }
             StartCoroutine(JumpedDelay());
         }
     }
@@ -92,7 +118,14 @@ public class BounceSlime : MonoBehaviour
         Audio.clip = moveLoop;
         Audio.loop = true;
         Audio.Play();
-        moveDirection = lastMoveDirection;
+        if (isIdleSlime == false)
+        {
+            moveDirection = lastMoveDirection;
+        }
+        if (isIdleSlime == true)
+        {
+            playIdleJump = false;
+        }
     }
 
 }

@@ -118,6 +118,7 @@ public class PlayerMove : MonoBehaviour
     {
         hasBlanket = false;
         immune = false;
+        hasGlided = false;
         //arrowCount = 0;
         // Assigns animator.
         anim = GetComponent<Animator>();
@@ -585,7 +586,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Jump_Right");
                 }
-                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true) && hasGlided == false)
+                if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
                 {
                     anim.Play("Parachute Open_Right");
                 }
@@ -640,7 +641,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     anim.Play("Monster Jump_Left");
                 }
-                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true) && hasGlided == false)
+                if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
                 {
                     anim.Play("Parachute Open_Left");
                 }
@@ -694,14 +695,12 @@ public class PlayerMove : MonoBehaviour
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Right");
-            PlayGlideSound();
             hasGlided = true;
         }
         if (lastDirection == -1 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Left");
-            PlayGlideSound();
             hasGlided = true;
         }
     }
@@ -712,13 +711,14 @@ public class PlayerMove : MonoBehaviour
         {
             //Hey Patrick is it working?
             float previousY = this.transform.position.y;
-            if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.Space)))
+            if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Space)))
             {
                 if (lastDirection == 1)
                     anim.Play("Parachute Open_Right");
                 else if (lastDirection == -1)
                     anim.Play("Parachute Open_Left");
                 hasPlayedGlide = true;
+                hasGlided = true;
                 PlayGlideSound();
                 isGliding = true;
             }

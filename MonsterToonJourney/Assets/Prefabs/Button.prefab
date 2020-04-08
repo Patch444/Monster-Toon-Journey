@@ -286,6 +286,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!61 &8157356126045748318
 BoxCollider2D:
   m_ObjectHideFlags: 0
