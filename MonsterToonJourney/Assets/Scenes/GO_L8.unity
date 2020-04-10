@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[insert witty line here]'
+  m_Text: '[insert placeholder text here]'
 --- !u!222 &63044665
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1103,6 +1103,7 @@ MonoBehaviour:
   levelFiveBtn: {fileID: 1598798404}
   levelSixBtn: {fileID: 0}
   levelSevenBtn: {fileID: 0}
+  levelEightBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   backBtn: {fileID: 214643145}
   currentScene:

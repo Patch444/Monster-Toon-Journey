@@ -1102,6 +1102,8 @@ MonoBehaviour:
   levelFourBtn: {fileID: 996793431}
   levelFiveBtn: {fileID: 1598798404}
   levelSixBtn: {fileID: 0}
+  levelSevenBtn: {fileID: 0}
+  levelEightBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   backBtn: {fileID: 214643145}
   currentScene:
@@ -3670,7 +3672,8 @@ MonoBehaviour:
   currentScene:
     m_Handle: 0
   sceneName: 
-  slider: {fileID: 0}
+  SFXslider: {fileID: 0}
+  MUSslider: {fileID: 0}
   mixer: {fileID: 0}
 --- !u!4 &1367100074
 Transform:
