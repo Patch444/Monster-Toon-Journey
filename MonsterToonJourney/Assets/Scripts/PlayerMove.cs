@@ -444,6 +444,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
     }
+    /*
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -452,6 +453,7 @@ public class PlayerMove : MonoBehaviour
         UnityEditor.Handles.color = Color.yellow;
         UnityEditor.Handles.DrawWireDisc(groundCheck.transform.position, Vector3.forward, groundCheckSize);
     }
+    */
     private void OnCollisionExit2D(Collision2D collision)
     {
         //Check to see if the collision exit is the ground
