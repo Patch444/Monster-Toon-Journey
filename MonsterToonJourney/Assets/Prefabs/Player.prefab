@@ -617,6 +617,7 @@ MonoBehaviour:
   isByDoor: 0
   shieldIcon: {fileID: 0}
   boxGrab: {fileID: 8300000, guid: 5d552c11315234c4bacd775a5f7959e1, type: 3}
+  boxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ShieldUp: {fileID: 8300000, guid: 8d5d643a3576b41f589a8fc596246115, type: 3}
   ShieldDown: {fileID: 8300000, guid: bc3fac2b63ed54e0da7c88550ecb7038, type: 3}
   ShieldGrab: {fileID: 8300000, guid: 0d2de4359e69546ab8c71020e48b1d2b, type: 3}

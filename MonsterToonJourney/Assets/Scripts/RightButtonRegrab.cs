@@ -53,6 +53,8 @@ public class RightButtonRegrab : MonoBehaviour
                 buttonScript.isPressed = true;
                 buttonAnim.Play("Button_Press");
                 //regrabCollider.SetActive(true);
+                pm.Audio.clip = pm.boxPlace;
+                pm.Audio.Play();
                 buttonScript.Audio.clip = buttonScript.ButtonDown;
                 buttonScript.Audio.Play();
             }

@@ -8,6 +8,7 @@ public class Interactible : MonoBehaviour
     GameManager gm;
     public bool canInteract;
     private PlayerMove pm;
+    public GameObject box;
     private Image boxIcon;
     private GameObject fm;
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class Interactible : MonoBehaviour
                 pm.Audio.Play();
                 boxIcon.enabled = true;
                 boxIcon.transform.SetParent(fm.transform);
-                Destroy(this.gameObject);
+                Destroy(box);
             }
         }
         

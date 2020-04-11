@@ -89,6 +89,7 @@ public class PlayerMove : MonoBehaviour
     public Image shieldIcon;
 
     public AudioClip boxGrab;
+    public AudioClip boxPlace;
     public AudioClip ShieldUp;
     public AudioClip ShieldDown;
     public AudioClip ShieldGrab;

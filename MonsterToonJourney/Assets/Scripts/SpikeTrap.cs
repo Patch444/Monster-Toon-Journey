@@ -91,7 +91,7 @@ public class SpikeTrap : MonoBehaviour
                 box.SetActive(true);
                 Audio.clip = BoxPlace;
                 Audio.Play();
-                spikes.GetComponent<BoxCollider2D>().enabled = false;
+                //spikes.GetComponent<BoxCollider2D>().enabled = false;
             }
 
             //starts activation timer
