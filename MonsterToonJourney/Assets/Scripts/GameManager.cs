@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
             isInFinal = false;
         }
 
-        if (isBossLevel == false)
+        if (isBossLevel == false && sceneName != "Intro")
         {
             countdownTxt = GameObject.Find("Countdown Text").GetComponent<Text>();
             countdownTxt.text = null;

@@ -1530,9 +1530,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5fbbeaace6ad4ec2a44a86bbeef2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  immune: 0
   isPaused: 0
   hasUnpaused: 0
+  hasUsedSlime: 0
+  isInFinal: 0
+  isBossLevel: 0
   pauseMenu: {fileID: 0}
   lives: 3
   fearSprites:
@@ -1543,8 +1545,8 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Level 1
   playerSR: {fileID: 0}
+  countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
-  isInFinal: 0
   flickerDuration: 0
   flickerTimer: 0
   globalManager: {fileID: 0}
@@ -2705,7 +2707,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -15445,6 +15447,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5430661793827457477, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
+        type: 3}
+      propertyPath: launchForce
+      value: -0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3220220260522444150, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
         type: 3}
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
@@ -15459,11 +15466,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5430661793827457477, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
-        type: 3}
-      propertyPath: launchForce
-      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5430661793931046549, guid: 8f9c9af34fd441e42a8d4b3a219b5b62,
         type: 3}
@@ -31768,7 +31770,7 @@ PrefabInstance:
         type: 3}
       propertyPath: startBtn
       value: 
-      objectReference: {fileID: 1533743179}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelSelectBtn
@@ -31778,37 +31780,37 @@ PrefabInstance:
         type: 3}
       propertyPath: quitBtn
       value: 
-      objectReference: {fileID: 709948073}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelOneBtn
       value: 
-      objectReference: {fileID: 2126486249}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelTwoBtn
       value: 
-      objectReference: {fileID: 435673708}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelThreeBtn
       value: 
-      objectReference: {fileID: 193248753}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelFourBtn
       value: 
-      objectReference: {fileID: 537994640}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: levelFiveBtn
       value: 
-      objectReference: {fileID: 833969033}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621485, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: backBtn
       value: 
-      objectReference: {fileID: 415287888}
+      objectReference: {fileID: 0}
     - target: {fileID: 2160602713794621486, guid: f670dae2372ccf44daea8b00aab35f7e,
         type: 3}
       propertyPath: m_LocalPosition.x
