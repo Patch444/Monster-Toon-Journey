@@ -31,7 +31,7 @@ public class SpikeTrap : MonoBehaviour
     public AudioClip SpikeDown;
     public AudioClip BoxPlace;
 
-    private AudioSource Audio;
+    public AudioSource Audio;
 
     public GameObject box;
     public GameObject spikes;
@@ -80,7 +80,7 @@ public class SpikeTrap : MonoBehaviour
         {
             //Add the box's rotation and position constraints back
             EnableBox();
-
+            /*
             //Player places the box
             if (Input.GetKeyDown(KeyCode.E) && canInteract && pm.hasBox && !hasBox)
             {
@@ -93,7 +93,7 @@ public class SpikeTrap : MonoBehaviour
                 Audio.Play();
                 //spikes.GetComponent<BoxCollider2D>().enabled = false;
             }
-
+            */
             //starts activation timer
             if (timerRunning)
             {

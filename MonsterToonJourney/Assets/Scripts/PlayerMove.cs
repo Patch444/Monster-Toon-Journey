@@ -597,6 +597,8 @@ public class PlayerMove : MonoBehaviour
                 if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (Input.GetKeyUp(KeyCode.LeftShift) && hasBlanket == true) && hasGlided == true)
                 {
                     anim.Play("Parachute Close And Jump_Right");
+                    StartCoroutine("ParachuteClose");
+
                 }
 
                 if (moveDirection == 1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && Input.GetKey(KeyCode.LeftShift))
@@ -651,6 +653,7 @@ public class PlayerMove : MonoBehaviour
                 if (moveDirection == -1 && isWalking == true && isAirborne == true && justLanded == false && isShielding == false && shieldTimer == 0 && (Input.GetKeyUp(KeyCode.LeftShift) && hasBlanket == true) && hasGlided == true)
                 {
                     anim.Play("Parachute Close And Jump_Left");
+                    StartCoroutine("ParachuteClose");
                 }
 
                 if (moveDirection == -1 && isWalking == true && isAirborne == false && justLanded == false && isShielding == true && shieldTimer > 0 && shieldTimer < 1 )
@@ -677,6 +680,12 @@ public class PlayerMove : MonoBehaviour
             isWalking = false;
         }
         previousMoveDirection = moveDirection;
+    }
+
+    private IEnumerator ParachuteClose()
+    {
+        yield return new WaitForSecondsRealtime(0.25f);
+        hasGlided = false;
     }
 
     private void Jump()

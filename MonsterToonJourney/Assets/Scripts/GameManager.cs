@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public string currentLevel = "Level 1";
     public SpriteRenderer playerSR;
 
+    public Image mamaMeter;
     public Text countdownTxt;
 
     public PlayerShieldSlime pSS;
@@ -83,10 +84,17 @@ public class GameManager : MonoBehaviour
             isInFinal = false;
         }
 
-        if (isBossLevel == false && sceneName != "Intro")
+        if (isBossLevel == false || sceneName == "Intro")
         {
             countdownTxt = GameObject.Find("Countdown Text").GetComponent<Text>();
             countdownTxt.text = null;
+            mamaMeter = GameObject.Find("Mama Meter").GetComponent<Image>();
+            mamaMeter.enabled = false;
+        }
+        else 
+        {
+            mamaMeter = GameObject.Find("Mama Meter").GetComponent<Image>();
+            mamaMeter.enabled = true;
         }
     }
 

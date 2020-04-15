@@ -448,6 +448,7 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Demo_BlanketArrows
   playerSR: {fileID: 0}
+  mamaMeter: {fileID: 0}
   countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
   flickerDuration: 0
@@ -53832,8 +53833,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fb8b348493c0a44bafc3184363d7f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossTimer: 30
+  startTime: 0
+  bossTimer: 10
   countdownTxt: {fileID: 0}
+  mamaSprites:
+  - {fileID: -1434399237633781316, guid: 1e6c3574282c4e2418dce4103bd56b31, type: 3}
+  - {fileID: -1434399237633781316, guid: 1e6c3574282c4e2418dce4103bd56b31, type: 3}
+  - {fileID: 5604201313658653518, guid: 1e6c3574282c4e2418dce4103bd56b31, type: 3}
+  - {fileID: 7629840379707711808, guid: 1e6c3574282c4e2418dce4103bd56b31, type: 3}
+  - {fileID: -3722811456287147500, guid: 1e6c3574282c4e2418dce4103bd56b31, type: 3}
+  mamaMeter: {fileID: 0}
 --- !u!4 &1161964043
 Transform:
   m_ObjectHideFlags: 0
@@ -59820,6 +59829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 0
+  box: {fileID: 0}
 --- !u!61 &1802033689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -60299,16 +60309,6 @@ PrefabInstance:
       propertyPath: groundCheckSize.x
       value: 0.33
       objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.10750413
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.7452998
-      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60373,6 +60373,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10750413
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7452998
       objectReference: {fileID: 0}
     - target: {fileID: 4764928568140238519, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
