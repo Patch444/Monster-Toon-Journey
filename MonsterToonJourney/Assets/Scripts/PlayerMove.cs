@@ -684,7 +684,7 @@ public class PlayerMove : MonoBehaviour
 
     private IEnumerator ParachuteClose()
     {
-        yield return new WaitForSecondsRealtime(0.25f);
+        yield return new WaitForSecondsRealtime(0.27f);
         hasGlided = false;
     }
 
@@ -741,6 +741,7 @@ public class PlayerMove : MonoBehaviour
                 else if (lastDirection == -1)
                     anim.Play("Parachute Close And Jump_Left");
                 hasPlayedGlide = false;
+                StartCoroutine("ParachuteClose");
                 isGliding = false;
 
             }
