@@ -11,6 +11,7 @@ public class TorchAnimateControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
     }
 
