@@ -89,4 +89,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GO_L8.unity
     guid: 2a833a60aeafee447bc6e63e926e26ac
+  - enabled: 0
+    path: Assets/Scenes/Level_5 Trailer.unity
+    guid: b32a53da2e36f484d8a5a55995202c9c
   m_configObjects: {}
