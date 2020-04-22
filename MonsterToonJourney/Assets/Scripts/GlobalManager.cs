@@ -26,6 +26,8 @@ public class GlobalManager : MonoBehaviour
         // Prevents the Global Manager from being destroyed between scenes.
         DontDestroyOnLoad(this.gameObject);
         Screen.SetResolution(1600, 900, true);
+        //PlayerPrefs.SetFloat("MusicVolume", (PlayerPrefs.GetFloat("MusicVolume")));
+        //PlayerPrefs.SetFloat("SFXVolume", (PlayerPrefs.GetFloat("SFXVolume")));
 
 
     }
@@ -35,15 +37,6 @@ public class GlobalManager : MonoBehaviour
     {
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         sceneName = currentScene.name;
-
-        if (sceneName == "Settings")
-        {
-            SFXslider = GameObject.Find("MUSSlider").GetComponent<Slider>();
-            SFXslider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-
-            SFXslider = GameObject.Find("SFXSlider").GetComponent<Slider>();
-            SFXslider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
-        }
     }
 
     public void SetLevel(float sliderValue)

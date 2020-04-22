@@ -66,6 +66,7 @@ public class SpikeTrap : MonoBehaviour
         spikeEnd = spikes.transform.position;
         spikeEnd.y += 1.5f;
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
         //boxLaunch.Launch();
     }
 

@@ -23,6 +23,7 @@ public class Door : MonoBehaviour
         anim = this.GetComponent<Animator>();
         timer = 0;
         sfxIndex = 0;
+        //sfx.volume = PlayerPrefs.GetFloat("FxVolume");
     }
 
     // Update is called once per frame

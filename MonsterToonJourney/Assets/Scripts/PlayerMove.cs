@@ -139,7 +139,7 @@ public class PlayerMove : MonoBehaviour
 
         //Sets up the Audio Source
         Audio = GetComponent<AudioSource>();
-
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
 
         if (gm == null)
         {

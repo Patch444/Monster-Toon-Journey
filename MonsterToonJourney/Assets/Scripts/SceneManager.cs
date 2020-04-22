@@ -24,6 +24,7 @@ public class SceneManager : MonoBehaviour
     public GameObject levelEightBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
+    public VolumeManager vm;
     public Scene currentScene;
     public string sceneName;
     public GlobalManager globalManager;
@@ -46,6 +47,10 @@ public class SceneManager : MonoBehaviour
             levelSixBtn.SetActive(false);
             levelSevenBtn.SetActive(false);
             levelEightBtn.SetActive(false);
+        }
+        if (sceneName == "Settings")
+        {
+            vm = GameObject.Find("VolumeManager").GetComponent<VolumeManager>();
         }
     }
 
@@ -184,7 +189,12 @@ public class SceneManager : MonoBehaviour
     // Transitions the player to the main menu.
     public void ToMainMenu()
     {
+        if (sceneName == "Settings")
+        {
+            vm.VolumePrefs();
+        }
         UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+
     }
 
     // Lets the player try the previous level again.

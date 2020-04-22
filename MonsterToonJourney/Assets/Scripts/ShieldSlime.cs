@@ -8,6 +8,7 @@ public class ShieldSlime : MonoBehaviour
     public PlayerMove pm;
     public Animator anim;
     public PlayerShieldSlime pSS;
+    //public AudioSource Audio;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class ShieldSlime : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = this.GetComponent<Animator>();
         pSS = GameObject.Find("PlayerShieldSlime").GetComponent<PlayerShieldSlime>();
+        //Audio = this.GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
         Spawn();
 
 

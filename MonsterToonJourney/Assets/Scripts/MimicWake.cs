@@ -29,6 +29,7 @@ public class MimicWake : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = GetComponent <Animator> ();
         audio = GetComponent<AudioSource>();
+        //audio.volume = PlayerPrefs.GetFloat("FxVolume");
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
     }
 

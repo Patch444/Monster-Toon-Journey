@@ -3340,7 +3340,8 @@ MonoBehaviour:
   sceneName: 
   SFXslider: {fileID: 0}
   MUSslider: {fileID: 0}
-  mixer: {fileID: 0}
+  sfxMixer: {fileID: 24100000, guid: 5baace075f40f49f5b5ed0aa27434041, type: 2}
+  musMixer: {fileID: 24100000, guid: 5504166d718c64160ba394c26cc5e400, type: 2}
 --- !u!4 &593270094
 Transform:
   m_ObjectHideFlags: 0
