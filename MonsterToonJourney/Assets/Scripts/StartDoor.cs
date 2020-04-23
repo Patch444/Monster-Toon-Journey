@@ -6,11 +6,14 @@ public class StartDoor : MonoBehaviour
 {
     public GameManager gm;
     public Animator anim;
+    public AudioSource Audio;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = this.GetComponent<Animator>();
+        Audio = this.GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
     }
 
     // Update is called once per frame

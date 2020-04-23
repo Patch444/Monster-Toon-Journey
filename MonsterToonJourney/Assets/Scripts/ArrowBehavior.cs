@@ -88,6 +88,7 @@ public class ArrowBehavior : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().enabled = true;
 
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
 
     }
 

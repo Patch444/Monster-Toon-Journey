@@ -13,6 +13,7 @@ public class BreakableWall : MonoBehaviour
     void Start()
     {
         Audio = wallSounds.GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
     }
 
     // Update is called once per frame

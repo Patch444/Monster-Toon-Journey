@@ -26,6 +26,7 @@ public class BoxLaunch : MonoBehaviour
         startPosition = transform.position;
         boxBody = GetComponent<Rigidbody2D>();
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 

@@ -132,11 +132,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch (4)
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -190,6 +185,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,
@@ -3917,11 +3917,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch (1)
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3975,6 +3970,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,
@@ -4268,7 +4268,8 @@ MonoBehaviour:
   sceneName: 
   SFXslider: {fileID: 0}
   MUSslider: {fileID: 0}
-  mixer: {fileID: 0}
+  sfxMixer: {fileID: 24100000, guid: 5baace075f40f49f5b5ed0aa27434041, type: 2}
+  musMixer: {fileID: 24100000, guid: 5504166d718c64160ba394c26cc5e400, type: 2}
 --- !u!4 &769853949
 Transform:
   m_ObjectHideFlags: 0
@@ -5404,11 +5405,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch (3)
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5462,6 +5458,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,
@@ -6008,11 +6009,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch (5)
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6066,6 +6062,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,
@@ -6393,11 +6394,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch (2)
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6451,6 +6447,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,
@@ -6870,11 +6871,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Torch
       objectReference: {fileID: 0}
-    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6928,6 +6924,11 @@ PrefabInstance:
     - target: {fileID: 8763412528420116578, guid: afb993e265237d84380b4287a8f9b048,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -5343793863122318320, guid: afb993e265237d84380b4287a8f9b048,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2520444354889101734, guid: afb993e265237d84380b4287a8f9b048,

@@ -58,6 +58,7 @@ public class Button : MonoBehaviour
         //regrabCollider.enabled = false;
 
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
 
         if (isSpikes)
         {

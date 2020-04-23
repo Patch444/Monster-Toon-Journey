@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public AudioClip PlayerHurt;
 
     public AudioSource Audio;
+    public AudioSource LevelMusic;
 
     public GameObject HurtSoundObject;
 
@@ -49,6 +50,9 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        
+
         // Assigns the Global Manager.
         globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
 
@@ -69,8 +73,11 @@ public class GameManager : MonoBehaviour
             playerSR = GameObject.Find("Player").GetComponent<SpriteRenderer>();
             HurtSoundObject = GameObject.Find("HurtSounds");
 
-            Audio = HurtSoundObject.GetComponent<AudioSource>();
 
+            Audio = HurtSoundObject.GetComponent<AudioSource>();
+            //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
+            //LevelMusic = GameObject.Find("LevelMusic").GetComponent<AudioSource>();
+            //LevelMusic.volume = PlayerPrefs.GetFloat("MusicVolume");
             flickerDuration = 2f;
         }
 

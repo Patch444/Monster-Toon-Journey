@@ -30,6 +30,7 @@ public class BounceSlime : MonoBehaviour
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAnim = GameObject.Find("Player").GetComponent<Animator>();
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
     }
 
     // Update is called once per frame

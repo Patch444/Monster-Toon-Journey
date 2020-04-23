@@ -13,7 +13,8 @@ public class SetVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        slider.value = PlayerPrefs.GetFloat("SFXVolume", 0.75f);
+        slider.value = PlayerPrefs.GetFloat("SFXVolume");
+        //mixer.SetFloat("SoundVol", PlayerPrefs.GetFloat("SFXVolume"));
         gm = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
     }
 

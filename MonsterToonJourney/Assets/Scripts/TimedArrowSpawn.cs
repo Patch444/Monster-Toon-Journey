@@ -31,6 +31,7 @@ public class TimedArrowSpawn : MonoBehaviour
         launchPoint = transform.position;
         SpawnArrow();
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 

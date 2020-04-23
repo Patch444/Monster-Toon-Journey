@@ -30,6 +30,7 @@ public class ArrowSpawn : MonoBehaviour
         launchPoint = transform.position;
         SpawnArrow();
         Audio = GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
     }
 
     // Update is called once per frame

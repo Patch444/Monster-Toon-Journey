@@ -9,6 +9,7 @@ public class Flamethrower : MonoBehaviour
     private GameManager gm;
     public Animator anim;
     public bool isShielded;
+    public AudioSource Audio;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,8 @@ public class Flamethrower : MonoBehaviour
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         anim = this.GetComponent<Animator>();
+        Audio = this.GetComponent<AudioSource>();
+        //Audio.volume = PlayerPrefs.GetFloat("FxVolume");
         isShielded = false;
     }
 

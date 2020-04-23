@@ -33,6 +33,7 @@ public class PendulumSwing : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         catcher = this.GetComponent<AxeCatchPlayer>();
         audio = GetComponent<AudioSource>();
+        //audio.volume = PlayerPrefs.GetFloat("FxVolume");
 
         targetAngle = new Quaternion(0, 0, maxAngle / 180, 1);
         targetPositionRight = catcher.target + 2 * Vector3.right;
