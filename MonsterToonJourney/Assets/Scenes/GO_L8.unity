@@ -1106,6 +1106,10 @@ MonoBehaviour:
   levelEightBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   backBtn: {fileID: 214643145}
+  resetBtn: {fileID: 0}
+  resetCheckBtn1: {fileID: 0}
+  resetCheckBtn2: {fileID: 0}
+  resetText: {fileID: 0}
   vm: {fileID: 0}
   currentScene:
     m_Handle: 0
@@ -3655,7 +3659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1367100073
 MonoBehaviour:
   m_ObjectHideFlags: 0

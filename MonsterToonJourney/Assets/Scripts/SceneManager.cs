@@ -24,6 +24,11 @@ public class SceneManager : MonoBehaviour
     public GameObject levelEightBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
+    public GameObject resetBtn;
+    public GameObject resetCheckBtn1;
+    public GameObject resetCheckBtn2;
+
+    public Text resetText;
     public VolumeManager vm;
     public Scene currentScene;
     public string sceneName;
@@ -51,6 +56,13 @@ public class SceneManager : MonoBehaviour
         if (sceneName == "Settings")
         {
             vm = GameObject.Find("VolumeManager").GetComponent<VolumeManager>();
+            resetBtn = GameObject.Find("Reset_Btn");
+            resetCheckBtn1 = GameObject.Find("ResetCheck_Btn_1");
+            resetCheckBtn1.SetActive(false);
+            resetCheckBtn2 = GameObject.Find("ResetCheck_Btn_2");
+            resetCheckBtn2.SetActive(false);
+            resetText = GameObject.Find("Reset_Txt").GetComponent<Text>();
+            resetText.text = "";
         }
     }
 
@@ -290,35 +302,60 @@ public class SceneManager : MonoBehaviour
     // Unlocks levels based on how far the player has gotten in the game.
     public void LevelUnlock()
     {
-        if (globalManager.howFar >= 2)
+        if (PlayerPrefs.GetInt("HowFar") >= 2)
         {
             levelTwoBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 3)
+        if (PlayerPrefs.GetInt("HowFar") >= 3)
         {
             levelThreeBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 4)
+        if (PlayerPrefs.GetInt("HowFar") >= 4)
         {
             levelFourBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 5)
+        if (PlayerPrefs.GetInt("HowFar") >= 5)
         {
             levelFiveBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 6)
+        if (PlayerPrefs.GetInt("HowFar") >= 6)
         {
             levelSixBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 7)
+        if (PlayerPrefs.GetInt("HowFar") >= 7)
         {
             levelSevenBtn.SetActive(true);
         }
-        if (globalManager.howFar >= 8)
+        if (PlayerPrefs.GetInt("HowFar") >= 8)
         {
             levelEightBtn.SetActive(true);
         }
 
+    }
+
+    public void ResetCheck()
+    {
+        resetBtn.SetActive(false);
+        resetCheckBtn1.SetActive(true);
+        resetCheckBtn2.SetActive(true);
+        resetText.text = "Are you sure you want to reset your progress?";
+    }
+
+    public void ResetCancel()
+    {
+        resetBtn.SetActive(true);
+        resetCheckBtn1.SetActive(false);
+        resetCheckBtn2.SetActive(false);
+        resetText.text = "";
+    }
+
+    public void ResetConfirm()
+    {
+        resetBtn.SetActive(true);
+        resetCheckBtn1.SetActive(false);
+        resetCheckBtn2.SetActive(false);
+        PlayerPrefs.SetInt("HowFar", 0);
+        resetText.text = "Your progress has been reset!";
     }
 
     // Exits the application.

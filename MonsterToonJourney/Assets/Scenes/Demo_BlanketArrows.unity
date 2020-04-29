@@ -453,10 +453,10 @@ MonoBehaviour:
   pSS: {fileID: 0}
   flickerDuration: 0
   flickerTimer: 0
-  globalManager: {fileID: 0}
   asp: {fileID: 0}
   PlayerHurt: {fileID: 8300000, guid: 57ae4e0eab22ee74dae87f811fd25cc1, type: 3}
   Audio: {fileID: 0}
+  LevelMusic: {fileID: 0}
   HurtSoundObject: {fileID: 0}
   currentScene:
     m_Handle: 0
@@ -7048,7 +7048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &403146834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60309,6 +60309,16 @@ PrefabInstance:
       propertyPath: groundCheckSize.x
       value: 0.33
       objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.10750413
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.7452998
+      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60373,16 +60383,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BodyType
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.10750413
-      objectReference: {fileID: 0}
-    - target: {fileID: 9025915813441279526, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 1.7452998
       objectReference: {fileID: 0}
     - target: {fileID: 4764928568140238519, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}

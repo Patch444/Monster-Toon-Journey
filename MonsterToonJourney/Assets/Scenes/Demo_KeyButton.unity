@@ -454,14 +454,15 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Demo_KeyButton
   playerSR: {fileID: 0}
+  mamaMeter: {fileID: 0}
   countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
   flickerDuration: 0
   flickerTimer: 0
-  globalManager: {fileID: 0}
   asp: {fileID: 0}
   PlayerHurt: {fileID: 8300000, guid: 57ae4e0eab22ee74dae87f811fd25cc1, type: 3}
   Audio: {fileID: 0}
+  LevelMusic: {fileID: 0}
   HurtSoundObject: {fileID: 0}
   currentScene:
     m_Handle: 0
@@ -25954,6 +25955,7 @@ MonoBehaviour:
   counterparts:
   - {fileID: 374039306}
   box: {fileID: 1338638831}
+  regrabCollider: {fileID: 0}
   sts: []
   aSpawns: []
   ports: []
@@ -25972,6 +25974,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!212 &372684233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -26236,7 +26239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &403146834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72944,6 +72947,7 @@ MonoBehaviour:
   counterparts:
   - {fileID: 1367449512}
   box: {fileID: 531018194}
+  regrabCollider: {fileID: 0}
   sts: []
   aSpawns: []
   ports: []
@@ -72962,6 +72966,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!212 &916940346
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -73835,6 +73840,7 @@ MonoBehaviour:
   counterparts:
   - {fileID: 1838042675}
   box: {fileID: 1815983119}
+  regrabCollider: {fileID: 0}
   sts: []
   aSpawns: []
   ports: []
@@ -73853,6 +73859,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!212 &1088726735
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -80369,6 +80376,7 @@ MonoBehaviour:
   counterparts:
   - {fileID: 2081905526}
   box: {fileID: 1932944342}
+  regrabCollider: {fileID: 0}
   sts: []
   aSpawns: []
   ports: []
@@ -80387,6 +80395,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!212 &1360321885
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -81230,6 +81239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 0
+  box: {fileID: 0}
 --- !u!61 &1802033689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -82128,6 +82138,7 @@ MonoBehaviour:
   counterparts:
   - {fileID: 1427512864}
   box: {fileID: 652685006}
+  regrabCollider: {fileID: 0}
   sts: []
   aSpawns: []
   ports: []
@@ -82146,6 +82157,7 @@ MonoBehaviour:
   BoxPlace: {fileID: 8300000, guid: 5ffb50b114f8142c6a65b365e24b629f, type: 3}
   ButtonDown: {fileID: 8300000, guid: 5094e10df868f43b598bbe716233c2a4, type: 3}
   ButtonUp: {fileID: 8300000, guid: 313bd4f4390854abe8fb6ac5b84062b8, type: 3}
+  Audio: {fileID: 0}
 --- !u!212 &1873093748
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82246,11 +82258,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 9025915811824162045, guid: 042c974a2e40a114b83337b94e73b245,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9025915813441279524, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: gm
@@ -82324,6 +82331,11 @@ PrefabInstance:
     - target: {fileID: 9025915813441279525, guid: 042c974a2e40a114b83337b94e73b245,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9025915811824162045, guid: 042c974a2e40a114b83337b94e73b245,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

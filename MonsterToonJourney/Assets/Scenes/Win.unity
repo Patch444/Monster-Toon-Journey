@@ -364,7 +364,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &182392401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,8 +912,15 @@ MonoBehaviour:
   levelFourBtn: {fileID: 996793431}
   levelFiveBtn: {fileID: 1598798404}
   levelSixBtn: {fileID: 0}
+  levelSevenBtn: {fileID: 0}
+  levelEightBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   backBtn: {fileID: 214643145}
+  resetBtn: {fileID: 0}
+  resetCheckBtn1: {fileID: 0}
+  resetCheckBtn2: {fileID: 0}
+  resetText: {fileID: 0}
+  vm: {fileID: 0}
   currentScene:
     m_Handle: 0
   sceneName: 

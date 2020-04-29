@@ -20219,7 +20219,6 @@ MonoBehaviour:
   pSS: {fileID: 0}
   flickerDuration: 0
   flickerTimer: 0
-  globalManager: {fileID: 0}
   asp: {fileID: 0}
   PlayerHurt: {fileID: 0}
   Audio: {fileID: 0}
@@ -22944,7 +22943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1012756826
 MonoBehaviour:
   m_ObjectHideFlags: 0

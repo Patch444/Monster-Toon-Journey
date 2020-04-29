@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public float flickerTimer = 0f;
 
-    public GlobalManager globalManager;
+    //public GlobalManager globalManager;
 
     public ArrowSpawn asp;
 
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         
 
         // Assigns the Global Manager.
-        globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
+        //globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
 
         hasUsedSlime = false;
 
@@ -344,59 +344,59 @@ public class GameManager : MonoBehaviour
         switch (currentLevel)
         {
             case "Level 1":
-                if (globalManager.howFar < 2)
+                if (PlayerPrefs.GetInt("HowFar") < 1)
                 {
-                    globalManager.howFar = 2;
+                    PlayerPrefs.SetInt("HowFar", 2);
                 }
                 //UnityEngine.SceneManagement.SceneManager.LoadScene("Level_2");
                 break;
             case "Level 2":
-                if (globalManager.howFar < 3)
+                if (PlayerPrefs.GetInt("HowFar") < 3)
                 {
-                    globalManager.howFar = 3;
+                    PlayerPrefs.SetInt("HowFar", 3);
                 }
                 //UnityEngine.SceneManagement.SceneManager.LoadScene("Level_3");
                 break;
             case "Level 3":
-                if (globalManager.howFar < 4)
+                if (PlayerPrefs.GetInt("HowFar") < 4)
                 {
-                    globalManager.howFar = 4;
+                    PlayerPrefs.SetInt("HowFar", 4);
                 }
                 //UnityEngine.SceneManagement.SceneManager.LoadScene("Level_4");
                 break;
             case "Level 4":
-                if (globalManager.howFar < 5)
+                if (PlayerPrefs.GetInt("HowFar") < 5)
                 {
-                    globalManager.howFar = 5;
+                    PlayerPrefs.SetInt("HowFar", 5);
                 }
                 //UnityEngine.SceneManagement.SceneManager.LoadScene("Level_5");
                 break;
             case "Level 5":
-                if (globalManager.howFar < 6)
+                if (PlayerPrefs.GetInt("HowFar") < 6)
                 {
-                    globalManager.howFar = 6;
+                    PlayerPrefs.SetInt("HowFar", 6);
                 }
                 break;
             case "Shield Demo":
-                if (globalManager.howFar < 7)
+                if (PlayerPrefs.GetInt("HowFar") < 7)
                 {
-                    globalManager.howFar = 7;
+                    PlayerPrefs.SetInt("HowFar", 7);
                 }
                 break;
             case "Level 7":
-                if (globalManager.howFar < 8)
+                if (PlayerPrefs.GetInt("HowFar") < 8)
                 {
-                    globalManager.howFar = 8;
+                    PlayerPrefs.SetInt("HowFar", 8);
                 }
                 break;
             case "Level 8":
-                if (globalManager.howFar < 9)
+                if (PlayerPrefs.GetInt("HowFar") < 9)
                 {
-                    globalManager.howFar = 9;
+                    PlayerPrefs.SetInt("HowFar", 9);
                 }
                 break;
         }
-        if (globalManager.howFar == 9 && isInFinal == true)
+        if (PlayerPrefs.GetInt("HowFar") == 9 && isInFinal == true)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         }

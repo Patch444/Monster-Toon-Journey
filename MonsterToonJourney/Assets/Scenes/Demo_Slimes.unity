@@ -517,14 +517,15 @@ MonoBehaviour:
   player: {fileID: 0}
   currentLevel: Demo_KeyButton
   playerSR: {fileID: 0}
+  mamaMeter: {fileID: 0}
   countdownTxt: {fileID: 0}
   pSS: {fileID: 0}
   flickerDuration: 0
   flickerTimer: 0
-  globalManager: {fileID: 0}
   asp: {fileID: 0}
   PlayerHurt: {fileID: 8300000, guid: 57ae4e0eab22ee74dae87f811fd25cc1, type: 3}
   Audio: {fileID: 0}
+  LevelMusic: {fileID: 0}
   HurtSoundObject: {fileID: 0}
   currentScene:
     m_Handle: 0
@@ -27055,7 +27056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &403146834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79978,6 +79979,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canInteract: 0
+  box: {fileID: 0}
 --- !u!61 &1802033689
 BoxCollider2D:
   m_ObjectHideFlags: 0
