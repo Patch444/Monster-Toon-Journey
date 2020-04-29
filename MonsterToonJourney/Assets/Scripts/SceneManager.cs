@@ -37,7 +37,7 @@ public class SceneManager : MonoBehaviour
     void Start()
     {
         // Assigns the Global Manager.
-        globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
+        //globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
         // Checks which scene the scene manager is in.
         currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
         sceneName = currentScene.name;
@@ -98,7 +98,14 @@ public class SceneManager : MonoBehaviour
     // Transitions the player to the level select.
     public void ToLevelSelect()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+        if (PlayerPrefs.GetInt("HowFar") < 1)
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("CS_1");
+        }
+        else
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelect");
+        }
     }
 
     // Transitions the player to the settings.
