@@ -80,6 +80,7 @@ public class SpikeTrap : MonoBehaviour
         if (!gm.isPaused && isActive == true)
         {
             //Add the box's rotation and position constraints back
+            Time.timeScale = 1;
             EnableBox();
             /*
             //Player places the box
@@ -155,6 +156,7 @@ public class SpikeTrap : MonoBehaviour
         }
         else
         {
+            Time.timeScale = 0;
             //box.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             boxConstrained = false;
             StopAllCoroutines();

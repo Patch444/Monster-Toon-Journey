@@ -165,6 +165,7 @@ public class PlayerMove : MonoBehaviour
             IdleDirection();
             anim.enabled = true;
             AudioListener.pause = false;
+            Time.timeScale = 1;
 
             if(playerBody.velocity.magnitude > maxVelocity)
             {
@@ -236,7 +237,8 @@ public class PlayerMove : MonoBehaviour
         else
         {
             rigidbody = GetComponent<Rigidbody2D>().velocity;
-            GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            Time.timeScale = 0;
             anim.enabled = false;
             AudioListener.pause = true;
         }
