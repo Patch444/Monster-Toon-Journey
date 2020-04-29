@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '[insert placeholder text here]'
+  m_Text: Looks like Slime Time is over...
 --- !u!222 &63044665
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1106,6 +1106,7 @@ MonoBehaviour:
   levelEightBtn: {fileID: 0}
   settingsBtn: {fileID: 0}
   backBtn: {fileID: 214643145}
+  vm: {fileID: 0}
   currentScene:
     m_Handle: 0
   sceneName: 

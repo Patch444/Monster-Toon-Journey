@@ -330,6 +330,13 @@ public class GameManager : MonoBehaviour
             // Loads the game over screen.
             UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L8");
         }
+
+        // Checks if the player is on the first boss level.
+        if (currentLevel == "Boss Level 1")
+        {
+            // Loads the game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_BL1");
+        }
     }
 
     public void AdvanceLevel()

@@ -143,6 +143,12 @@ public class SceneManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level_8");
     }
 
+    // Transitions the player to the first boss level.
+    public void ToBossOne()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("BossLevel_1");
+    }
+
     /*
     // Transitions the player to the game over screen for the first level.
     public void ToGameOverOne()
@@ -272,6 +278,12 @@ public class SceneManager : MonoBehaviour
         {
             // Loads the eighth level.
             ToLevelEight();
+        }
+
+        // Checks if the player was on the first boss level.
+        if (currentLevel == "BossLevel_1")
+        {
+            ToBossOne();
         }
     }
 
