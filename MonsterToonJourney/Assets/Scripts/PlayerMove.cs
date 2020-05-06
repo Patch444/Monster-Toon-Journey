@@ -67,6 +67,7 @@ public class PlayerMove : MonoBehaviour
     public bool hasGlided;
     public bool isGliding;
 
+
     public bool canWalk;
     bool isWalking;
 
@@ -709,12 +710,14 @@ public class PlayerMove : MonoBehaviour
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Right");
+            PlayGlideSound();
             hasGlided = true;
         }
         if (lastDirection == -1 && ((Input.GetKeyDown(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftShift)) && hasBlanket == true))
         {
             //Debug.Log("Jump Left");
             anim.Play("Parachute Open_Left");
+            PlayGlideSound();
             hasGlided = true;
         }
     }
@@ -756,7 +759,7 @@ public class PlayerMove : MonoBehaviour
                     else if (lastDirection == -1)
                         anim.Play("Parachute Open_Left");
                     hasPlayedGlide = true;
-                    PlayGlideSound();
+                    //PlayGlideSound();
                 }
                 playerBody.drag += glideFactor;
                 if (playerBody.drag > maximumDrag)
