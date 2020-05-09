@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         }
 
 
-        if (currentLevel == "Level 8")
+        if (currentLevel == "Boss Level 1")
         {
             isInFinal = true;
         }
@@ -341,6 +341,7 @@ public class GameManager : MonoBehaviour
 
     public void AdvanceLevel()
     {
+        //Debug.Log(PlayerPrefs.GetInt("HowFar"));
         switch (currentLevel)
         {
             case "Level 1":

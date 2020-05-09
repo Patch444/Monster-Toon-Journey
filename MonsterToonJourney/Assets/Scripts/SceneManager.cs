@@ -22,6 +22,7 @@ public class SceneManager : MonoBehaviour
     public GameObject levelSixBtn;
     public GameObject levelSevenBtn;
     public GameObject levelEightBtn;
+    public GameObject bossOneBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
     public GameObject resetBtn;
@@ -52,6 +53,7 @@ public class SceneManager : MonoBehaviour
             levelSixBtn.SetActive(false);
             levelSevenBtn.SetActive(false);
             levelEightBtn.SetActive(false);
+            bossOneBtn.SetActive(false);
         }
         if (sceneName == "Settings")
         {
@@ -336,6 +338,10 @@ public class SceneManager : MonoBehaviour
         if (PlayerPrefs.GetInt("HowFar") >= 8)
         {
             levelEightBtn.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("HowFar") >= 9)
+        {
+            bossOneBtn.SetActive(true);
         }
 
     }
