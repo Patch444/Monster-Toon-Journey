@@ -20,7 +20,7 @@ public class BoxRespawn : MonoBehaviour
 
     public int counterpartCount;
 
-    //public Animator anim;
+    public Animator anim;
 
     public bool canInteract;
     public bool hasSpikes;
@@ -36,7 +36,7 @@ public class BoxRespawn : MonoBehaviour
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
         fm = GameObject.Find("Fear Meter");
    
-        //anim = this.GetComponent<Animator>();
+        anim = this.GetComponent<Animator>();
 
         foreach (GameObject respawner in counterparts)
         {
@@ -59,6 +59,7 @@ public class BoxRespawn : MonoBehaviour
     {
         if (!gm.isPaused)
         {
+            anim.enabled = true;
             if (Input.GetKeyDown(KeyCode.E) && canInteract)
             {
                 foreach (GameObject ogBox in ogBoxes)
@@ -104,12 +105,16 @@ public class BoxRespawn : MonoBehaviour
                                 brp.SpawnBox();
                             }
                         }
+                        anim.Play("Lever_Pull");
                     }
                 }
             }
-        {
-    }          
+            
     }
+    else
+        {
+            anim.enabled = false;
+        }
 }
 
     public void OnTriggerEnter2D(Collider2D other)
