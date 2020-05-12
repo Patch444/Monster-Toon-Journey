@@ -158,17 +158,18 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (!gm.isPaused)
         {
+
             // ReleaseArrow();
             Shielding();
             IdleDirection();
             anim.enabled = true;
             AudioListener.pause = false;
-            Time.timeScale = 1;
+            //Time.timeScale = 1;
+            //Debug.Log("Time scale: " + Time.timeScale);
 
-            if(playerBody.velocity.magnitude > maxVelocity)
+            if (playerBody.velocity.magnitude > maxVelocity)
             {
                 playerBody.velocity = playerBody.velocity.normalized * maxVelocity;
             }
@@ -239,7 +240,7 @@ public class PlayerMove : MonoBehaviour
         {
             rigidbody = GetComponent<Rigidbody2D>().velocity;
             //GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-            Time.timeScale = 0;
+            //Time.timeScale = 0;
             anim.enabled = false;
             AudioListener.pause = true;
         }

@@ -114,6 +114,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R) || Input.GetKeyDown(KeyCode.Escape))
             {
                 isPaused = true;
+                Time.timeScale = 0;
             }
         }
         else
@@ -124,6 +125,7 @@ public class GameManager : MonoBehaviour
                 isPaused = false;
                 hasUnpaused = true;
                 pauseMenu.SetActive(false);
+                Time.timeScale = 1f;
             }
         }
 
