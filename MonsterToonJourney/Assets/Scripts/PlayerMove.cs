@@ -148,7 +148,7 @@ public class PlayerMove : MonoBehaviour
         }
 
         playerBody = gameObject.GetComponent<Rigidbody2D>();
-        spawnPosition = this.transform.position;
+        spawnPosition = transform.position;
         moveDirection = 0;
         previousMoveDirection = 0;
         isByDoor = false;
