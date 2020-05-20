@@ -354,7 +354,7 @@ public class GameManager : MonoBehaviour
         switch (currentLevel)
         {
             case "Level 1":
-                if (PlayerPrefs.GetInt("HowFar") < 1)
+                if (PlayerPrefs.GetInt("HowFar") < 2)
                 {
                     PlayerPrefs.SetInt("HowFar", 2);
                 }

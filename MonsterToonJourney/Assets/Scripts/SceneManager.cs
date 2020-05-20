@@ -105,6 +105,7 @@ public class SceneManager : MonoBehaviour
         if (PlayerPrefs.GetInt("HowFar") < 1)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("CS_1");
+            PlayerPrefs.SetInt("HowFar", 1);
         }
         else
         {
