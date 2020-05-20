@@ -22,6 +22,7 @@ public class SceneManager : MonoBehaviour
     public GameObject levelSixBtn;
     public GameObject levelSevenBtn;
     public GameObject levelEightBtn;
+    public GameObject levelNineBtn;
     public GameObject bossOneBtn;
     public GameObject settingsBtn;
     public GameObject backBtn;
@@ -53,6 +54,7 @@ public class SceneManager : MonoBehaviour
             levelSixBtn.SetActive(false);
             levelSevenBtn.SetActive(false);
             levelEightBtn.SetActive(false);
+            levelNineBtn.SetActive(false);
             bossOneBtn.SetActive(false);
         }
         if (sceneName == "Settings")
@@ -162,6 +164,12 @@ public class SceneManager : MonoBehaviour
     public void ToLevelEight()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level_8");
+    }
+
+    // Transitions the player to the eighth level.
+    public void ToLevelNine()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_9");
     }
 
     // Transitions the player to the first boss level.
@@ -301,6 +309,19 @@ public class SceneManager : MonoBehaviour
             ToLevelEight();
         }
 
+        // Checks if the player was on level eight.
+        if (currentLevel == "Level_8")
+        {
+            // Loads the eighth level.
+            ToLevelEight();
+        }
+
+        // Checks if the player was on level nine.
+        if (currentLevel == "Level_9")
+        {
+            // Loads the eighth level.
+            ToLevelNine();
+        }
         // Checks if the player was on the first boss level.
         if (currentLevel == "BossLevel_1")
         {
@@ -340,6 +361,10 @@ public class SceneManager : MonoBehaviour
             levelEightBtn.SetActive(true);
         }
         if (PlayerPrefs.GetInt("HowFar") >= 9)
+        {
+            levelNineBtn.SetActive(true);
+        }
+        if (PlayerPrefs.GetInt("HowFar") >= 10)
         {
             bossOneBtn.SetActive(true);
         }

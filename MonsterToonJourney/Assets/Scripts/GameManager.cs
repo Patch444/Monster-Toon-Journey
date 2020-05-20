@@ -333,6 +333,13 @@ public class GameManager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L8");
         }
 
+        // Checks if the player is on the ninth level.
+        if (currentLevel == "Level 9")
+        {
+            // Loads the game over screen.
+            UnityEngine.SceneManagement.SceneManager.LoadScene("GO_L9");
+        }
+
         // Checks if the player is on the first boss level.
         if (currentLevel == "Boss Level 1")
         {
@@ -398,8 +405,14 @@ public class GameManager : MonoBehaviour
                     PlayerPrefs.SetInt("HowFar", 9);
                 }
                 break;
+            case "Level 9":
+                if (PlayerPrefs.GetInt("HowFar") < 10)
+                {
+                    PlayerPrefs.SetInt("HowFar", 10);
+                }
+                break;
         }
-        if (PlayerPrefs.GetInt("HowFar") == 9 && isInFinal == true)
+        if (PlayerPrefs.GetInt("HowFar") == 10 && isInFinal == true)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("Win");
         }

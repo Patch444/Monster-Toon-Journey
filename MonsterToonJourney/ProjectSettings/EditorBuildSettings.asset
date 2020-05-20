@@ -84,10 +84,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_7.unity
     guid: f65ee1a68d9e7d4449aaf709bcedf3a7
   - enabled: 1
-    path: Assets/Scenes/Level_8.unity
+    path: Assets/Scenes/Level_9.unity
     guid: 6d136a836e54e264eb758f8a7a7655ad
   - enabled: 1
-    path: Assets/Scenes/GO_L8.unity
+    path: Assets/Scenes/GO_L9.unity
     guid: 2a833a60aeafee447bc6e63e926e26ac
   - enabled: 0
     path: Assets/Scenes/Level_5 Trailer.unity
@@ -101,4 +101,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CS_1.unity
     guid: 25dfe0ba7237cb54b9a0f175700fc7e9
+  - enabled: 1
+    path: Assets/Scenes/Level_8.unity
+    guid: 2d240b97a5feb88488bd8f27b854a64d
+  - enabled: 1
+    path: Assets/Scenes/GO_L8.unity
+    guid: 8e0baefc8e6670e4181c64972272475c
   m_configObjects: {}
