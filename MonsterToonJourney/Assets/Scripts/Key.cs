@@ -34,7 +34,8 @@ public class Key : MonoBehaviour
                 pm.Audio.Play();
                 keyIcon.enabled = true;
                 keyIcon.transform.SetParent(fm.transform);
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                StartCoroutine("DestroyDelay");
             }
         }
     }
@@ -53,5 +54,15 @@ public class Key : MonoBehaviour
         {
             canInteract = false;
         }
+    }
+
+    // Gives the key enough time to play the pick-up SFX before it's destroyed.
+    public IEnumerator DestroyDelay()
+    {
+        // Play key SFX here
+        canInteract = false;
+        this.GetComponent<SpriteRenderer>().enabled = false;
+        yield return new WaitForSecondsRealtime(2f);
+        Destroy(this.gameObject);
     }
 }
