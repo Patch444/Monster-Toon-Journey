@@ -53468,7 +53468,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932760616}
-  m_Text: "Pick up the shield with\nE, then deploy it with \nQ."
+  m_Text: "Pick up the shield with E, \nthen deploy/stow it with \nQ."
   m_OffsetZ: 0
   m_CharacterSize: 1.1
   m_LineSpacing: 1

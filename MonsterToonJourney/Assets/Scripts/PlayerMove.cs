@@ -522,7 +522,6 @@ public class PlayerMove : MonoBehaviour
             anim.Play("Monster Idle_Right");
             //Debug.Log("Idling");
         }
-
         if (isWalking == false && moveDirection == 0 && lastDirection == 1 && isAirborne == false && justLanded == false && isShielding == true && shieldTimer < 1)
         {
             anim.Play("Shield_Idle_Right");
