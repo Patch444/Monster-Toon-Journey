@@ -51,11 +51,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        
+
 
         // Assigns the Global Manager.
         //globalManager = GameObject.Find("GlobalManager").GetComponent<GlobalManager>();
-
+        Time.timeScale = 1;
         hasUsedSlime = false;
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
@@ -435,6 +435,7 @@ public class GameManager : MonoBehaviour
     public void Continue()
     {
         isPaused = false;
+        Time.timeScale = 1;
         pauseMenu.SetActive(false);
     }
 }
