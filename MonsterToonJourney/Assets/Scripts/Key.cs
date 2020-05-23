@@ -10,11 +10,13 @@ public class Key : MonoBehaviour
     private PlayerMove pm;
     private Image keyIcon;
     private GameObject fm;
+    private ItemSounds its;
     // Start is called before the first frame update
     void Start()
     {
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
+        its = GameObject.Find("ItemSFX").GetComponent<ItemSounds>();
         keyIcon = GameObject.Find("Key Icon").GetComponent<Image>();
         keyIcon.enabled = false;
         fm = GameObject.Find("Fear Meter");
@@ -30,8 +32,8 @@ public class Key : MonoBehaviour
             {
                 //Debug.Log("Player picked up a shield");
                 pm.hasKey = true;
-                pm.Audio.clip = pm.keyGrab;
-                pm.Audio.Play();
+                its.Audio.clip = pm.keyGrab;
+                its.Audio.Play();
                 keyIcon.enabled = true;
                 keyIcon.transform.SetParent(fm.transform);
                 //Destroy(this.gameObject);

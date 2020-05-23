@@ -28,9 +28,13 @@ public class BoxRespawn : MonoBehaviour
 
     private Image boxIcon;
 
+    public AudioSource Audio;
+    public AudioClip leverPull;
+
     // Start is called before the first frame update
     void Start()
     {
+        Audio = GetComponent<AudioSource>();
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         boxIcon = GameObject.Find("Box Icon").GetComponent<Image>();
@@ -106,6 +110,8 @@ public class BoxRespawn : MonoBehaviour
                             }
                         }
                         anim.Play("Lever_Pull");
+                        Audio.clip = leverPull;
+                        Audio.Play();
                     }
                 }
             }

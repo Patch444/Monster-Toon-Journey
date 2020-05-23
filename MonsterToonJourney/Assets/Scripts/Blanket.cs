@@ -10,6 +10,7 @@ public class Blanket : MonoBehaviour
     private PlayerMove pm;
     private Image blanketIcon;
     private GameObject fm;
+    private ItemSounds its;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,7 @@ public class Blanket : MonoBehaviour
         gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         pm = GameObject.Find("Player").GetComponent<PlayerMove>();
         fm = GameObject.Find("Fear Meter");
+        its = GameObject.Find("ItemSFX").GetComponent<ItemSounds>();
         blanketIcon = GameObject.Find("Blanket Icon").GetComponent<Image>();
         blanketIcon.enabled = false;
     }
@@ -48,8 +50,8 @@ public class Blanket : MonoBehaviour
             {
                 //Debug.Log("Player picked up a shield");
                 pm.hasBlanket = true;
-                // pm.Audio.clip = pm.blanketGrab;
-                // pm.Audio.Play();
+                its.Audio.clip = its.blanketGrab;
+                its.Audio.Play();
                 blanketIcon.enabled = true;
                 blanketIcon.transform.SetParent(fm.transform);
 
