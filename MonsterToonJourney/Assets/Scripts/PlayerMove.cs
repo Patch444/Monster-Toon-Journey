@@ -361,15 +361,15 @@ public class PlayerMove : MonoBehaviour
 
             //Debug.DrawLine(transform.position, Vector2.down * 1f + (Vector2)transform.position, Color.cyan);
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
-            Debug.Log(colliders.Length);
+            //Debug.Log(colliders.Length);
             if (colliders != null)
             {
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    Debug.Log(colliders[i].tag);
+                    //Debug.Log(colliders[i].tag);
                     if (colliders[i].tag == "Ground" || colliders[i].tag == "MovingPlatform")
                     {
-                        Debug.Log("Staying in collision");
+                        //Debug.Log("Staying in collision");
 
                         isAirborne = false;
                         canJump = true;
@@ -397,21 +397,21 @@ public class PlayerMove : MonoBehaviour
         {
             bool isLanding = false;
             Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheck.transform.position, groundCheckSize, LayerMask.GetMask("Ground"));
-            Debug.Log("No colliders: " + colliders == null);
+            //Debug.Log("No colliders: " + colliders == null);
             if (colliders != null)
             {
                 foreach (Collider2D collider in colliders)
                 {
                     if (collider.tag == "Ground" || collider.tag == "MovingPlatform")
                     {
-                        Debug.Log("Hit Ground");
+                        //Debug.Log("Hit Ground");
                         isLanding = true;
                         hasGlided = false;
                         break;
                     }
                 }
             }
-            Debug.Log("Goblin is landing: " + isLanding);
+            //Debug.Log("Goblin is landing: " + isLanding);
             if (isAirborne && isLanding)
             {
                 if (lastDirection == 1 && hasPlayedGlide == false)
@@ -575,7 +575,7 @@ public class PlayerMove : MonoBehaviour
         {
             //Move to the right
             RaycastHit2D hit = Physics2D.Raycast(transform.position, this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawLine(transform.position, Vector2.right * 0.7f + (Vector2)transform.position, Color.cyan);
+            //Debug.DrawLine(transform.position, Vector2.right * 0.7f + (Vector2)transform.position, Color.cyan);
             lastDirection = 1;
 
             if (hit.collider == null)
@@ -633,7 +633,7 @@ public class PlayerMove : MonoBehaviour
         {
             //Move to the left
             RaycastHit2D hit = Physics2D.Raycast(transform.position, -this.transform.right, 0.7f, LayerMask.GetMask("Ground"));
-            Debug.DrawLine(transform.position, Vector2.left * 0.7f + (Vector2)transform.position, Color.cyan);
+            //Debug.DrawLine(transform.position, Vector2.left * 0.7f + (Vector2)transform.position, Color.cyan);
             lastDirection = -1;
             if (hit.collider == null)
             {

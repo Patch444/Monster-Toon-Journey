@@ -233,7 +233,7 @@ public class SpikeTrap : MonoBehaviour
     }
     public IEnumerator DownDelay()
     {
-        Debug.Log("Moving spikes");
+        //Debug.Log("Moving spikes");
         if (hasGoneDown)
         {
             hasGoneDown = false;
